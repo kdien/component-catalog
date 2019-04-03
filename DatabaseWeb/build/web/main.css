@@ -1,0 +1,168 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2-Apr-2019, 11:41:25 PM
+    Author     : User
+*/
+
+
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            header {
+                height:100px;
+                background: white;
+                display:flex;
+            }
+            #header-title{
+                padding-top:1em;
+                width:40%;
+                height:100%;
+                text-align: center;
+                float:left;
+            }
+            #header-phrase{
+                float:right;
+                padding-top:1em;
+                width:60%;
+                height:100%;
+                text-align: center;
+                border-radius:0 0 0 20px;
+                box-shadow:-1px 0px 1px 1px black;
+                background:url(http://localhost:8084/DatabaseWeb/images/topright.jpg);
+                color:white;
+                text-shadow:1px 1px 1px black;
+            }
+
+            #nav-menu {
+                display: flex;
+            }
+
+            .nav-button {
+                text-align: center;
+                flex-basis: 25%;
+                text-decoration: none;
+                padding: 1em;
+                color: white;
+                text-shadow: 1px 1px 5px black;
+                background: green;
+                border-radius: 0px 0px 5px 5px;
+                margin-bottom: -5px;
+                z-index:1;
+                border:1px solid black;
+                box-shadow: 1px 2px 3px .4px black;
+            }
+
+            main {
+                width: 100vw;
+                background: black;
+                display: grid;
+                grid-template: auto / 30% 70%;
+            }
+
+            #left-side {
+                background: url(http://localhost:8084/DatabaseWeb/images/left.jpg);
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                padding: .5rem;
+            }
+            #left-side img{
+                max-height:30px;
+                max-width:30px;
+            }
+
+            #right-side {
+                text-align: center;
+                background: url(http://localhost:8084/DatabaseWeb/images/right.jpg);
+                padding: 2rem;
+            }
+
+            .title {
+                color: white;
+                padding: 1rem;
+                background: rgba(0, 0, 0, .9);
+                border-radius: 20px 20px 0 0;
+                margin: 2px;
+            }
+
+            .description {
+                font-size: 1rem;
+                margin: 2px;
+                padding: 1rem;
+                background: rgba(255, 255, 255, .8);
+                border-radius: 0 0 20px 20px;
+            }
+
+            .codeArea {
+                display: flex;
+                border-radius: 5px;
+                height: 20px;
+                justify-content: center;
+                color: maroon;
+                width: 100%;
+                min-height: 100px;
+                overflow: auto;
+                margin: auto;
+            }
+
+            #search {
+                display:flex;
+                border-radius: 5px;
+                height: 20px;
+                color: maroon;
+                text-align: center;
+                font-size: 2rem;
+                margin: .2rem;
+                padding: 2px 2px;
+            }
+            .option-container{
+                background: rgba(0,0,0,.5);
+                display: flex;
+                justify-content: center;
+                border-radius: 20px;
+                text-decoration: none;
+                color: white;
+                margin: 2px;
+                font-size: 2rem;
+            }
+            .option {
+                background: rgba(0,0,0,.5);
+                display: flex;
+                justify-content: center;
+                border-radius: 20px;
+                text-decoration: none;
+                color: white;
+                margin: 2px;
+                font-size: 2rem;
+                width:100%;
+            }
+            .option img{
+                max-height:30px;
+            }
+
+            .button {
+                background: green;
+                box-shadow: 1px 1px 2px .2px red;
+                border-radius: 10px;
+                font-size:1rem;
+                padding:1rem;
+                font-weight:bolder;
+            }
+
+            .categories {
+                text-align:left;
+                color:maroon;
+                font-size: 2rem;
+                background: rgba(255, 255, 255, .5);
+                border-radius: 20px;
+                text-shadow:1px 1px 3px black;
+            }
+            .categories img{
+                max-height:30px;
+            }
