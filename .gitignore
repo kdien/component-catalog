@@ -1,15 +1,3 @@
-#IntelliJ
-.idea
-
-#NetBeans
-**/nbproject/private
-**/nbproject/Makefile-*.mk
-**/nbproject/Package-*.bash
-build
-nbbuild
-dist
-nbdist
-
 # Compiled class file
 *.class
 
@@ -45,3 +33,18 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
+
+### IntelliJ ###
+.idea/
+.idea_modules/
+out/
+*.iml
+
+### NetBeans ###
+**/nbproject/private
+**/nbproject/Makefile-*.mk
+**/nbproject/Package-*.bash
+build/
+nbbuild/
+dist/
+nbdist/
