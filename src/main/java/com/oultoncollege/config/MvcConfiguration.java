@@ -19,7 +19,7 @@
 //	@Bean
 //	public ViewResolver getViewResolver(){
 //		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-//		resolver.setPrefix("/WEB-INF/views/");
+//		resolver.setPrefix("/WEB-INF/templates/");
 //		resolver.setSuffix(".html");
 //		return resolver;
 //	}
