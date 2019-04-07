@@ -1,18 +1,22 @@
-//package com.oultoncollege.controllers;
-//
-//import org.springframework.stereotype.Controller;
-//import org.springframework.web.bind.annotation.RequestMapping;
-//import org.springframework.web.bind.annotation.RequestParam;
-//import org.springframework.web.servlet.ModelAndView;
-//
-//@Controller
-//public class HomeController {
-//
-//	@RequestMapping(value="/hello")
-//	public ModelAndView hello(@RequestParam(required=false, defaultValue="World") String name) {
-//		ModelAndView ret = new ModelAndView("home");
-//		// Adds an object to be used in home.html
-//		ret.addObject("name", name);
-//		return ret;
-//	}
-//}
+package com.oultoncollege.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+@RequestMapping("/*")
+public class HomeController {
+
+	@RequestMapping
+	public String index() {
+		return "index";
+	}
+
+	@RequestMapping("/greeting")
+	public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
+		model.addAttribute("name", name);
+		return "home/greeting";
+	}
+}
