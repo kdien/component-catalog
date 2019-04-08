@@ -1,28 +1,10 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head>
-    <title>Getting Started: Serving Web Content</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<!--header content-->
+<div data-th-replace="~{fragments/header :: header}"></div>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="css/style.css" rel="stylesheet" media="screen">
-    <link href="js/bootstrap.min.js" rel="stylesheet" media="screen">
-    <link href="js/project.js" rel="stylesheet" media="screen">
+<!-- body content-->
+<p data-th-text="'Hello, ' + ${name} + '!'"/>
 
-</head>
-<body>
+<!--footer content-->
+<div data-th-replace="~{fragments/footer :: footer}"></div>
 
-
-<div th:replace="~{fragments/header :: header}">header</div>
-
-
-<p th:text="'Hello, ' + ${name} + '!'"/>
-
-
-<div th:replace="~{fragments/footer :: footer}">footer</div>
-
-</body>
-
-</html>
 
