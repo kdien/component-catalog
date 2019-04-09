@@ -1,4 +1,4 @@
-package com.oultoncollege;
+package com.oultoncollege.ComponentCatalog;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

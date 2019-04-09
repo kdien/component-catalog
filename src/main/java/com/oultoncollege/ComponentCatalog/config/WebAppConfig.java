@@ -1,4 +1,4 @@
-package com.oultoncollege.config;
+package com.oultoncollege.ComponentCatalog.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;

@@ -1,4 +1,4 @@
-package com.oultoncollege.controllers;
+package com.oultoncollege.ComponentCatalog.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
