@@ -1,16 +1,14 @@
 /*
     ADDITIONAL DEMO STYLE, NOT IMPORTANT TO MAKE THINGS WORK BUT TO MAKE IT A BIT NICER :)
 */
-
-
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
 
 body, html {
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
-    height:100%;
-    overflow-y:hidden;
+    height: 100%;
+    overflow-y: hidden;
 }
 
 #sidebar p {
@@ -21,9 +19,13 @@ body, html {
     color: #999;
 }
 
-#sidebar a,#sidebar  a:hover,#sidebar  a:focus {
+#sidebar a, #sidebar a:hover, #sidebar a:focus {
     color: inherit;
     text-decoration: none;
+    transition: all 0.3s;
+}
+
+#sidebar-collapses {
     transition: all 0.3s;
 }
 
@@ -36,6 +38,7 @@ body, html {
 #sidebar .sidebar-header {
     padding: 20px;
 }
+
 #sidebar ul.components {
     padding: 20px 0;
     border-bottom: 1px solid #47748b;
@@ -51,6 +54,7 @@ body, html {
     font-size: 1.1em;
     display: block;
 }
+
 #sidebar ul li a:hover {
     color: #7386D5;
     background: #fff;
@@ -60,11 +64,16 @@ body, html {
     color: #fff;
     background: #6d7fcc;
 }
+
 #sidebar ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
     background: #6d7fcc;
 }
+.row{
+    height: 100% !important;
+}
+
 #sidebar a[data-toggle="collapse"] {
     position: relative;
 }
@@ -76,10 +85,12 @@ body, html {
     right: 20px;
     transform: translateY(-50%);
 }
+
 #sidebar {
     min-width: 250px;
     max-width: 250px;
 }
+
 .wrapper {
     display: flex;
     align-items: stretch;
@@ -90,17 +101,41 @@ body, html {
     max-width: 320px;
 }
 
+
 #sidebar.active {
     margin-left: -250px;
 }
-main,  .wrapper{
-    height:100%;
+
+main, .wrapper {
+    height: 100%;
 }
-i{
-    font-size:1.5rem;
+
+i {
+    font-size: 1.5rem;
 }
+
+.hidden {
+    opacity: 0;
+    -webkit-transition:   opacity 0.5s ease;
+    -moz-transition:  opacity 0.5s ease;
+    -ms-transition:  opacity 0.5s ease;
+    -o-transition:  opacity 0.5s ease;
+    transition:  opacity 0.5s ease;
+    transition-delay:0.2s;
+}
+
+.container-fluid{
+    padding-left:0;
+    margin-left:0;
+    height: 100%;
+}
+#textArea{
+    position:relative;
+    margin-top:12em;
+}
+
 @media only screen and (max-width: 800px) {
-    #menuCollapse{
-        display: block!important
+    #menuCollapse {
+        display: block !important
     }
 }

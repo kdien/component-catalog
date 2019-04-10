@@ -2,8 +2,6 @@ $(function() {
     $("nav #menuToggle").on("click", function() {
         toggleMenuIcon();
     });
-
-
 });
 
 function toggleMenuIcon() {
