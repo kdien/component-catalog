@@ -1,0 +1,12 @@
+<!--header content-->
+<div data-th-replace="~{fragments/header :: header}"></div>
+
+<!--body content-->
+<h1>Create New Language</h1>
+<form action="#" method="post" data-th-action="@{/languages/create}" data-th-object="${language}">
+    <p>Name: <input type="text" data-th-field="*{name}"></p>
+    <p><input type="submit" value="Submit"></p>
+</form>
+
+<!--footer content-->
+<div data-th-replace="~{fragments/footer :: footer}"></div>
