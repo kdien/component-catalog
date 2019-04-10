@@ -10,13 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping(path = "/components")
+@RequestMapping(path = "/component/*")
 public class ComponentController {
 
     @Autowired
@@ -64,7 +61,7 @@ public class ComponentController {
 //        return componentRepository.findById(id);
 //    }
 
-    @GetMapping(path = "/component")
+    @GetMapping(path = "")
     public String component(@RequestParam int id, Model model) {
         ComponentServiceImpl compService = new ComponentServiceImpl(componentRepository);
         LanguageServiceImpl langService = new LanguageServiceImpl(languageRepository);
@@ -74,6 +71,25 @@ public class ComponentController {
 
         model.addAttribute("component", component);
         model.addAttribute("language", language);
+
         return "home/component";
+    }
+
+    @GetMapping(path = "/create")
+    public String createComponent(Model model) {
+        LanguageServiceImpl langService = new LanguageServiceImpl(languageRepository);
+
+        model.addAttribute("component", new Component());
+        model.addAttribute("languages", langService.getAllLanguages());
+
+        return "component/create";
+    }
+
+    @PostMapping(path = "/create")
+    public String submitComponent(@ModelAttribute Component component) {
+        ComponentServiceImpl compService = new ComponentServiceImpl(componentRepository);
+        compService.createComponent(component);
+
+        return "redirect:/index";
     }
 }
