@@ -1,5 +1,12 @@
+$(function() {
+    $("nav #menuToggle").on("click", function() {
+        toggleMenuIcon();
+    });
+
+
+});
+
 function toggleMenuIcon() {
-    var menuButton = document.getElementById("menuToggle");
-    menuButton.classList.toggle("fa-bars");
-    menuButton.classList.toggle("fa-chevron-circle-down");
+    $("nav #menuToggle").toggleClass("fa-bars");
+    $("nav #menuToggle").toggleClass("fa-chevron-circle-down");
 }
