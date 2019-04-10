@@ -30,7 +30,6 @@ public class Component implements Serializable {
     @JoinColumn(name = "language_id")
     private Language language;
 
-    @NotNull
     @ManyToMany
     private List<Customization> customizations;
 

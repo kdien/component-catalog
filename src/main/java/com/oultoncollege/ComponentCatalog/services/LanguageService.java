@@ -5,17 +5,17 @@ import java.util.List;
 
 public interface LanguageService {
 
-    Language createComponent(Language language);
+    Language createLanguage(Language language);
 
-    Language getComponent(int id);
+    Language getLanguage(int id);
 
-    Language editComponent(Language language);
+    Language editLanguage(Language language);
 
-    void deleteComponent(Language language);
+    void deleteLanguage(Language language);
 
-    void deleteComponent(int id);
+    void deleteLanguage(int id);
 
-    List<Language> getAllComponents();
+    List<Language> getAllLanguages();
 
-    long countComponents();
+    long countLanguages();
 }
