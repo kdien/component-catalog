@@ -17,12 +17,12 @@ public class LanguageServiceImpl implements LanguageService {
     }
 
     @Override
-    public Language createComponent(Language language) {
+    public Language createLanguage(Language language) {
         return languageRepository.save(language);
     }
 
     @Override
-    public Language getComponent(int id) {
+    public Language getLanguage(int id) {
         if(languageRepository.findById(id).isPresent()) {
             return languageRepository.findById(id).get();
         }
@@ -31,27 +31,27 @@ public class LanguageServiceImpl implements LanguageService {
     }
 
     @Override
-    public Language editComponent(Language language) {
+    public Language editLanguage(Language language) {
         return languageRepository.save(language);
     }
 
     @Override
-    public void deleteComponent(Language language) {
+    public void deleteLanguage(Language language) {
         languageRepository.delete(language);
     }
 
     @Override
-    public void deleteComponent(int id) {
+    public void deleteLanguage(int id) {
         languageRepository.deleteById(id);
     }
 
     @Override
-    public List<Language> getAllComponents() {
+    public List<Language> getAllLanguages() {
         return languageRepository.findAll();
     }
 
     @Override
-    public long countComponents() {
+    public long countLanguages() {
         return languageRepository.count();
     }
 }

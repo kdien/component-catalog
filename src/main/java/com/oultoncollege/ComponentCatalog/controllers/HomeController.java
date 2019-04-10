@@ -16,14 +16,11 @@ public class HomeController {
 
     @RequestMapping("/greeting")
     public String greeting(@RequestParam(name = "name", required = false, defaultValue = "World") String name, Model model) {
-        model.addAttribute("name", name);
-
 
         String pageTitle = "Greetings";
+        model.addAttribute("name", name);
         model.addAttribute("pageTitle", pageTitle);
 
         return "home/greeting";
-
-
     }
 }
