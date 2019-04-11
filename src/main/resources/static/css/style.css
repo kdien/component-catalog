@@ -74,6 +74,10 @@ body, html {
     height: 100% !important;
 }
 
+.col-3{
+    z-index:1;
+}
+
 #sidebar a[data-toggle="collapse"] {
     position: relative;
 }
@@ -136,6 +140,6 @@ i {
 
 @media only screen and (max-width: 800px) {
     #menuCollapse {
-        display: block !important
+        display: block !important;
     }
 }
