@@ -35,13 +35,12 @@ function toggleMenuIcon() {
 }
 
 // Hide create form by default
-$(".create-form").hide();
 
 // Click plus button to show and hide form
 $(".create-button").click(function () {
     $(this).find("i").toggleClass("rotate");
     $(this).toggleClass("button-click");
-    $(".create-form").toggle(400);
+    $(".list-detail").toggleClass("appear");
     $(".create-form input[type='text']").focus();
 });
 
