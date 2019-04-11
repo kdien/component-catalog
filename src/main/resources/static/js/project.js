@@ -1,5 +1,5 @@
 $(function() {
-    $("nav #menuToggle").on("click", function() {
+    $("#menuToggle").on("click", function() {
         toggleMenuIcon();
     });
 
@@ -30,7 +30,8 @@ $(function() {
 });
 
 function toggleMenuIcon() {
-    $("nav #menuToggle").toggleClass("fa-bars fa-chevron-circle-down");
+    $("#iconToggle").toggleClass("fa-chevron-left fa-chevron-right");
+    $("#sidebar-collapses").toggleClass("hiddenLeft");
 }
 
 // Hide create form by default

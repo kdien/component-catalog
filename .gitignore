@@ -40,6 +40,20 @@ buildNumber.properties
 out/
 *.iml
 
+### Eclipse ###
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+.project
+
 ### NetBeans ###
 **/nbproject/private
 **/nbproject/Makefile-*.mk

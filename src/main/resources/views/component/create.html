@@ -7,23 +7,33 @@
     <h1>Create New Component:</h1>
 
     <form action="#" data-th-action="@{/component/create}" data-th-object="${component}" method="post">
-        <p>
-            <label for="name-field">Name:</label>
-            <input type="text" data-th-field="*{name}" id="name-field" />
-        </p>
-        <p>
-            <label for="desc-field">Description:</label>
-            <input type="text" data-th-field="*{description}" id="desc-field" />
-        </p>
-        <p>
-            <label for="lang-field">Language:</label>
-            <select data-th-field="*{language}" id="lang-field">
-                <option data-th-each="language : ${languages}" data-th-text="${language.name}" data-th-value="${language.getLangId()}"></option>
-            </select>
-        </p>
-        <p>
-            <input type="submit" value="Submit" />
-        </p>
+
+        <div class="form-field">
+            <div class="form-field-control">
+                <label for="name-field" class="form-field-label">Name:</label>
+                <input type="text" class="form-field-input" data-th-field="*{name}" id="name-field" />
+            </div>
+        </div>
+
+        <div class="form-field">
+            <div class="form-field-control">
+                <label for="desc-field" class="form-field-label">Description:</label>
+                <textarea type="text" class="form-field-textarea" data-th-field="*{description}" id="desc-field"></textarea>
+            </div>
+        </div>
+
+        <div class="">
+            <div class="">
+                <label for="lang-field" class="form-field-label">Language:</label>
+                <select class="custom-select" data-th-field="*{language}" id="lang-field">
+                    <option data-th-each="language : ${languages}" data-th-text="${language.name}" data-th-value="${language.getLangId()}"></option>
+                </select>
+            </div>
+        </div>
+
+        <div>
+            <input class="btn model-submit" type="submit" value="Submit" />
+        </div>
     </form>
 </div>
 
