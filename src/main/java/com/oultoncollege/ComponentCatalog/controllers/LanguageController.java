@@ -4,12 +4,13 @@ import com.oultoncollege.ComponentCatalog.models.Language;
 import com.oultoncollege.ComponentCatalog.repositories.LanguageRepository;
 import com.oultoncollege.ComponentCatalog.services.LanguageService;
 import com.oultoncollege.ComponentCatalog.services.LanguageServiceImpl;
+import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/language/*")
@@ -22,17 +23,17 @@ public class LanguageController {
     }
 
     @GetMapping(path = "/create")
-    public String createLanguageForm(Model model, @RequestParam(name = "success", required = false) Optional<Boolean> success) {
+    public String createLanguageForm(Model model, @RequestParam(name = "success", required = false) @Nullable Boolean success) {
         model.addAttribute("language", new Language());
 
-        if (success.isPresent())
-            model.addAttribute("success", success.get());
+        if (success != null)
+            model.addAttribute("success", success);
 
         return "language/create";
     }
 
     @PostMapping(path = "/create")
-    public String createLanguageSubmit(@ModelAttribute Language language, BindingResult result, Model model) {
+    public String createLanguageSubmit(@Valid @ModelAttribute Language language, BindingResult result, Model model) {
         languageService.createLanguage(language);
 
         if (result.hasErrors()) {
