@@ -41,6 +41,28 @@
                                     </li>
                                 </ul>
                             </li>
+                            <li class="category-list-item">
+                                <div class="list-button">
+                                    <button type="button" class="btn btn-primary create-button">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                                <div class="list-detail">
+                                    <form class="create-form" action="/Category/Create" method="post" style="display: none;">
+
+                                        <div class="form-input-box">
+                                            <input class="form-control border-0 input-boxshadow" type="text" data-val="true" data-val-length="Category name cannot be longer than 50 characters." data-val-length-max="50" data-val-required="Category name cannot be empty" id="CategoryName" maxlength="50" name="CategoryName" value="test">
+                                            <span data-valmsg-replace="true" class="text-danger field-validation-valid" data-valmsg-for="CategoryName">This category already exists</span>
+                                        </div>
+                                        <div class="form-input-button">
+                                            <button type="submit" class="btn btn-success">
+                                                <i class="fas fa-check"></i>
+                                            </button>
+                                        </div>
+                                        <input type="hidden" value="2" data-val="true" data-val-required="The UserID field is required." id="UserID" name="UserID">
+                                        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8BNuMcorNAVPhe40goMcsiUUuWWsAeeFJ0DrrV1zVQcS__NS9xVWFiB1uKEvAHBOM3bkdcZPXNKp-dZ75U6zSFMK_9OFzFTZAtpc0syi-lsRz5TANDERaco0cC3UzzO_U8nnXJeASnzEmXH2ZtYO1cq-rtKoztTr53tkgZcYyCx5jQrRqz9xrCP4kRKXrmvs7A"></form>
+                                </div>
+                            </li>
                         </ul>
                     </aside>
                     <!--End of sidebar-->

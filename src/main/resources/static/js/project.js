@@ -33,3 +33,15 @@ function toggleMenuIcon() {
     $("nav #menuToggle").toggleClass("fa-bars fa-chevron-circle-down");
 }
 
+// Hide create form by default
+$(".create-form").hide();
+
+// Click plus button to show and hide form
+$(".create-button").click(function () {
+    $(this).find("i").toggleClass("rotate");
+    $(this).toggleClass("button-click");
+    $(".create-form").toggle(400);
+    $(".create-form input[type='text']").focus();
+});
+
+
