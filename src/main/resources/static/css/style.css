@@ -329,3 +329,7 @@ i {
 .hiddenLeft {
     margin-left: -320px;
 }
+.category-list-item{
+    position:absolute;
+    bottom:7vh;
+}
