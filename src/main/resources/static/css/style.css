@@ -23,7 +23,9 @@ body, html {
     line-height: 1.7em;
     color: #999;
 }
-
+#searchBar{
+    margin-top:-50px;
+}
 #sidebar a, #sidebar a:hover, #sidebar a:focus {
     color: inherit;
     text-decoration: none;
@@ -31,7 +33,8 @@ body, html {
 }
 
 #sidebar-collapses {
-    transition: all 0.3s;
+    transition: all 1s;
+    margin-right:50px;
 }
 
 #sidebar {
