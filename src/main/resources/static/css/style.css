@@ -1,6 +1,11 @@
 /*
     ADDITIONAL DEMO STYLE, NOT IMPORTANT TO MAKE THINGS WORK BUT TO MAKE IT A BIT NICER :)
 */
+*{
+    margin:0;
+    padding:0;
+}
+
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
 
@@ -137,10 +142,14 @@ i {
 #textArea{
     position:relative;
     margin-top:12em;
+    width:100%;
 }
 
 @media only screen and (max-width: 800px) {
     #menuCollapse {
         display: block !important;
+    }
+    .flex{
+        display:flex;
     }
 }
