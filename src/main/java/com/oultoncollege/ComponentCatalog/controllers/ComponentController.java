@@ -4,9 +4,10 @@ import com.oultoncollege.ComponentCatalog.models.Component;
 import com.oultoncollege.ComponentCatalog.models.Language;
 import com.oultoncollege.ComponentCatalog.repositories.ComponentRepository;
 import com.oultoncollege.ComponentCatalog.repositories.LanguageRepository;
+import com.oultoncollege.ComponentCatalog.services.ComponentService;
 import com.oultoncollege.ComponentCatalog.services.ComponentServiceImpl;
+import com.oultoncollege.ComponentCatalog.services.LanguageService;
 import com.oultoncollege.ComponentCatalog.services.LanguageServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,11 +17,13 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(path = "/component/*")
 public class ComponentController {
 
-    @Autowired
-    private ComponentRepository componentRepository;
+    private ComponentService compService;
+    private LanguageService langService;
 
-    @Autowired
-    private LanguageRepository languageRepository;
+    public ComponentController(ComponentRepository compRepository, LanguageRepository langRepository) {
+        this.compService = new ComponentServiceImpl(compRepository);
+        this.langService = new LanguageServiceImpl(langRepository);
+    }
 
     @GetMapping(path = "/add")
     public @ResponseBody
@@ -45,27 +48,18 @@ public class ComponentController {
         lang.setLangId(langId);
         c.setLanguage(lang);
 
-        componentRepository.save(c);
+        compService.createComponent(c);
         return "Saved";
     }
 
     @GetMapping(path = "/all")
     public @ResponseBody
     Iterable<Component> getAllComponents() {
-        return componentRepository.findAll();
+        return compService.getAllComponents();
     }
-
-//    @GetMapping(path = "/find")
-//    public @ResponseBody
-//    Optional<Component> getComponent(@RequestParam int id) {
-//        return componentRepository.findById(id);
-//    }
 
     @GetMapping(path = "")
     public String component(@RequestParam int id, Model model) {
-        ComponentServiceImpl compService = new ComponentServiceImpl(componentRepository);
-        LanguageServiceImpl langService = new LanguageServiceImpl(languageRepository);
-
         Component component = compService.getComponent(id);
         Language language = langService.getLanguage(component.getLanguage().getLangId());
 
@@ -77,8 +71,6 @@ public class ComponentController {
 
     @GetMapping(path = "/create")
     public String createComponent(Model model) {
-        LanguageServiceImpl langService = new LanguageServiceImpl(languageRepository);
-
         model.addAttribute("component", new Component());
         model.addAttribute("languages", langService.getAllLanguages());
 
@@ -87,9 +79,8 @@ public class ComponentController {
 
     @PostMapping(path = "/create")
     public String submitComponent(@ModelAttribute Component component) {
-        ComponentServiceImpl compService = new ComponentServiceImpl(componentRepository);
         compService.createComponent(component);
 
-        return "redirect:/index";
+        return "redirect:/";
     }
 }

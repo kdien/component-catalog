@@ -3,14 +3,16 @@
 <div data-th-replace="~{fragments/sidebar :: sidebar}"></div>
 
 <!--body content-->
-<h1>Create New Language</h1>
-<form action="#" method="post" data-th-action="@{/language/create}" data-th-object="${language}">
-    <p>Name: <input type="text" data-th-field="*{name}"></p>
-    <p><input type="submit" value="Submit"></p>
-</form>
+<div>
+    <h1>Create New Language</h1>
+    <form action="#" method="post" data-th-action="@{/language/create}" data-th-object="${language}">
+        <p>Name: <input type="text" data-th-field="*{name}"></p>
+        <p><input type="submit" value="Submit"></p>
+    </form>
 
-<div class="alert alert-success" role="alert" data-th-if="${success} == true" data-th-text="'New language added'"></div>
-<div class="alert alert-danger" role="alert" data-th-if="${success} == false" data-th-text="'Error adding new language'"></div>
+    <div class="alert alert-success" role="alert" data-th-if="${success} == true" data-th-text="'New language added'"></div>
+    <div class="alert alert-danger" role="alert" data-th-if="${success} == false" data-th-text="'Error adding new language'"></div>
+</div>
 
 <!--footer content-->
 <div data-th-replace="~{fragments/footer :: footer}"></div>
