@@ -22,9 +22,9 @@
             </div>
         </div>
 
-        <div class="">
-            <div class="">
-                <label for="lang-field" class="form-field-label">Language:</label>
+        <div class="form-field">
+            <div class="form-field-control">
+                <label for="lang-field" class="">Language:</label>
                 <select class="custom-select" data-th-field="*{language}" id="lang-field">
                     <option data-th-each="language : ${languages}" data-th-text="${language.name}" data-th-value="${language.getLangId()}"></option>
                 </select>
