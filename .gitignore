@@ -52,6 +52,7 @@ local.properties
 .settings/
 .loadpath
 .recommenders
+.project
 
 ### NetBeans ###
 **/nbproject/private
