@@ -85,8 +85,8 @@ body, html {
     height: 100%;
 }
 
-#successBox{
-    padding-left:0;
+#successBox {
+    padding-left: 0;
 }
 
 #sidebar a[data-toggle="collapse"] {
@@ -101,17 +101,34 @@ body, html {
     transform: translateY(-50%);
 }
 
+.create-button{
+    z-index: 1;
+}
+
+.list-detail{
+    margin-left:-320px;
+    transition: all 0.5s;
+}
+
+
 #sidebar {
     min-width: 250px;
     max-width: 250px;
 }
-.li.category-list-item{
+
+
+.li.category-list-item {
     display: grid;
     grid-template: auto / 75px 1fr;
     padding: 1em 0;
     border-bottom: 1px solid rgba(0, 0, 0, .125);
 
 }
+
+.category-list-item{
+    display: flex;
+}
+
 .form-control {
     display: block;
     width: 100%;
@@ -127,6 +144,14 @@ body, html {
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
+}
+
 .wrapper {
     display: flex;
     align-items: stretch;
@@ -136,10 +161,29 @@ body, html {
     min-width: 320px;
     max-width: 320px;
 }
-#addButton{
-    margin-bottom:3.5em;
+
+#addButton {
+    margin-bottom: 3.5em;
 }
 
+#CategoryName {
+    /*margin-left: 2.9em;*/
+    padding: 1.3em 1.1em;
+    text-align: left;
+}
+
+.list-button {
+    height: 0px;
+    z-index: 1;
+}
+
+.create-form{
+    display: flex;
+}
+.rotate {
+    transform: rotate(45deg);
+    transition-duration: .25s;
+}
 
 #sidebar.active {
     margin-left: -250px;
@@ -171,8 +215,11 @@ i {
 
 #textArea {
     position: relative;
-    margin-top: 12em;
     width: 100%;
+}
+
+.appear{
+    margin-left: 0;
 }
 
 .form-field-control::after {
@@ -228,6 +275,7 @@ i {
         display: flex;
     }
 }
-.hiddenLeft{
-    margin-left:-320px;
+
+.hiddenLeft {
+    margin-left: -320px;
 }
