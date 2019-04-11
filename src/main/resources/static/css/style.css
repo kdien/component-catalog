@@ -1,7 +1,6 @@
 /*
     ADDITIONAL DEMO STYLE, NOT IMPORTANT TO MAKE THINGS WORK BUT TO MAKE IT A BIT NICER :)
 */
-
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
 * {
@@ -32,9 +31,10 @@ body, html {
 
 #sidebar-collapses {
     transition: all 0.3s;
-    z-index:1;
-    margin-right:50px;
+    z-index: 1;
+    margin-right: 50px;
 }
+
 #sidebar {
     background: #4e5369;
     color: #fff;
@@ -86,8 +86,8 @@ body, html {
     height: 100%;
 }
 
-#successBox{
-    padding-left:0;
+#successBox {
+    padding-left: 0;
 }
 
 #sidebar a[data-toggle="collapse"] {
@@ -106,13 +106,15 @@ body, html {
     min-width: 250px;
     max-width: 250px;
 }
-.li.category-list-item{
+
+.li.category-list-item {
     display: grid;
     grid-template: auto / 75px 1fr;
     padding: 1em 0;
     border-bottom: 1px solid rgba(0, 0, 0, .125);
 
 }
+
 .form-control {
     display: block;
     width: 100%;
@@ -137,8 +139,9 @@ body, html {
     min-width: 320px;
     max-width: 320px;
 }
-#addButton{
-    margin-bottom:3.5em;
+
+#addButton {
+    margin-bottom: 3.5em;
 }
 
 
@@ -266,14 +269,17 @@ i {
 @media only screen and (max-width: 800px) {
 
 }
-.hiddenLeft{
-    margin-left:-320px;
+
+.hiddenLeft {
+    margin-left: -320px;
 }
-#searchBar{
-    margin:auto!important;
-    margin-top:-45px!important;
+
+#searchBar {
+    margin: auto !important;
+    margin-top: -45px !important;
 }
-#menuHide{
-    margin-right:-49px;
-    text-align:right;
+
+#menuHide {
+    margin-right: -49px;
+    text-align: right;
 }
