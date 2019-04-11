@@ -27,13 +27,14 @@ body, html {
 #sidebar a, #sidebar a:hover, #sidebar a:focus {
     color: inherit;
     text-decoration: none;
-    transition: all 0.7s;
+    transition: all 1s;
 }
 
 #sidebar-collapses {
     transition: all 0.3s;
+    z-index:1;
+    margin-right:50px;
 }
-
 #sidebar {
     background: #4e5369;
     color: #fff;
@@ -275,5 +276,4 @@ i {
 #menuHide{
     margin-right:-49px;
     text-align:right;
-    z-index:1;
 }
