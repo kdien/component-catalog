@@ -220,14 +220,17 @@ i {
 }
 
 @media only screen and (max-width: 800px) {
-    #menuCollapse {
-        display: block !important;
-    }
 
-    .flex {
-        display: flex;
-    }
 }
 .hiddenLeft{
     margin-left:-320px;
+}
+#searchBar{
+    margin:auto!important;
+    margin-top:-45px!important;
+}
+#menuHide{
+    margin-right:-49px;
+    text-align:right;
+    z-index:1;
 }
