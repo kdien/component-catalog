@@ -17,36 +17,39 @@
             </ul>
 
             <ul class="list-unstyled components">
-                <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
-                       class="dropdown-toggle">PHP</a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                            <a href="#">Home 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Home 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Home 3</a>
-                        </li>
-                    </ul>
+                <li data-th-each="language : ${@getLanguages}" data-th-text="${language.name}">
+                    <p data-th-each="component : ${language.getComponents()}" data-th-text="${component.name}"></p>
                 </li>
-                <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
-                       class="dropdown-toggle">Java</a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a href="#">Page 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 3</a>
-                        </li>
-                    </ul>
-                </li>
+                <!--<li class="active">-->
+                    <!--<a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"-->
+                       <!--class="dropdown-toggle">PHP</a>-->
+                    <!--<ul class="collapse list-unstyled" id="homeSubmenu">-->
+                        <!--<li>-->
+                            <!--<a href="#">Home 1</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">Home 2</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">Home 3</a>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"-->
+                       <!--class="dropdown-toggle">Java</a>-->
+                    <!--<ul class="collapse list-unstyled" id="pageSubmenu">-->
+                        <!--<li>-->
+                            <!--<a href="#">Page 1</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">Page 2</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">Page 3</a>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</li>-->
                 <li class="category-list-item">
                     <div class="list-button">
                         <button type="button" class="btn btn-primary create-button">

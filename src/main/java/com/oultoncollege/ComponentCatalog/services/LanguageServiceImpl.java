@@ -1,9 +1,11 @@
 package com.oultoncollege.ComponentCatalog.services;
 
+import com.oultoncollege.ComponentCatalog.models.Component;
 import com.oultoncollege.ComponentCatalog.models.Language;
 import com.oultoncollege.ComponentCatalog.repositories.LanguageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 @Service
@@ -53,5 +55,12 @@ public class LanguageServiceImpl implements LanguageService {
     @Override
     public long countLanguages() {
         return languageRepository.count();
+    }
+
+    @Override
+    public List<Component> getComponents(Language language) {
+        // get all components with the same language ID as the passed language
+        Language selectedLang = getLanguage(language.getLangId());
+        return null;
     }
 }
