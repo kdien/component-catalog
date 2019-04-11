@@ -1,13 +1,13 @@
 /*
     ADDITIONAL DEMO STYLE, NOT IMPORTANT TO MAKE THINGS WORK BUT TO MAKE IT A BIT NICER :)
 */
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
 * {
     margin: 0;
     padding: 0;
 }
-
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
-
 
 body, html {
     font-family: 'Poppins', sans-serif;
@@ -172,6 +172,49 @@ i {
 #textArea {
     position: relative;
     margin-top: 12em;
+    width: 100%;
+}
+
+.form-field {
+    display: block;
+    margin-bottom: 16px;
+    caret-color: #4e5369;
+}
+
+.form-field--is-active .form-field-control::after {
+    border-bottom: 2px solid #6d7fcc;
+    transform: scaleX(150);
+}
+
+.form-field--is-active .form-field-label {
+    color: #4e5369;
+    font-size: 0.75rem;
+    transform: translateY(-14px);
+}
+
+.form-field--is-filled .form-field-label {
+    font-size: 0.75rem;
+    transform: translateY(-14px);
+}
+
+.form-field-label {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: normal;
+    left: 0;
+    margin: 0;
+    padding: 18px 12px 0;
+    position: absolute;
+    top: 0;
+    transition: all 0.4s;
+    width: 100%;
+    cursor: text;
+}
+
+.form-field-control {
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+    position: relative;
     width: 100%;
 }
 
