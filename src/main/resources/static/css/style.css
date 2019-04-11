@@ -134,9 +134,55 @@ i {
     margin-left:0;
     height: 100%;
 }
-#textArea{
+
+#textArea {
     position:relative;
     margin-top:12em;
+    width:100%;
+}
+
+.form-field-control::after {
+    border-bottom: 2px solid #6d7fcc;
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    transform: scaleX(0);
+    transition: all 0.4s;
+    width: 1%;
+}
+
+.form-field-input,
+.form-field-textarea {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid #4e5369;
+    color: #fff;
+    display: block;
+    font-size: 1.2rem;
+    margin-top: 24px;
+    outline: 0;
+    padding: 0 12px 10px 12px;
+    width: 100%;
+}
+
+.form-field-textarea {
+    height: 150px;
+}
+
+.custom-select {
+    background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='white' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right .75rem center/8px 10px;
+    background-color: #4e5369 !important;
+    color: #fff;
+}
+
+.model-submit {
+    background-color: #6d7fcc !important;
+    margin-top: 2em;
 }
 
 @media only screen and (max-width: 800px) {
