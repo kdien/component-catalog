@@ -116,6 +116,14 @@ body, html {
     margin-left:-320px;
     transition: all 0.5s;
 }
+#sidebar a, #sidebar a:hover, #sidebar a:focus{
+    border-radius:0px;
+}
+
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled){
+    border-radius: 0px;
+}
+
 
 
 #sidebar {
@@ -134,6 +142,7 @@ body, html {
 
 .category-list-item{
     display: flex;
+    max-width: 320px;
 }
 
 .form-control {
@@ -263,6 +272,10 @@ i {
     transition: all 0.4s;
     width: 100%;
     cursor: text;
+}
+
+.alert{
+    padding:.65rem.25rem!important;
 }
 
 .form-field-control {
