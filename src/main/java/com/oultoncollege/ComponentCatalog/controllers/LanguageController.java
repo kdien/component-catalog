@@ -2,31 +2,37 @@ package com.oultoncollege.ComponentCatalog.controllers;
 
 import com.oultoncollege.ComponentCatalog.models.Language;
 import com.oultoncollege.ComponentCatalog.repositories.LanguageRepository;
+import com.oultoncollege.ComponentCatalog.services.LanguageService;
 import com.oultoncollege.ComponentCatalog.services.LanguageServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @Controller
 @RequestMapping("/language/*")
 public class LanguageController {
 
-    @Autowired
-    private LanguageRepository languageRepository;
+    private LanguageService languageService;
+
+    public LanguageController(LanguageRepository repository) {
+        languageService = new LanguageServiceImpl(repository);
+    }
 
     @GetMapping(path = "/create")
-    public String createLanguageForm(Model model) {
-
-
+    public String createLanguageForm(Model model, @RequestParam(name = "success", required = false) Optional<Boolean> success) {
         model.addAttribute("language", new Language());
+
+        if (success.isPresent())
+            model.addAttribute("success", success.get());
+
         return "language/create";
     }
 
     @PostMapping(path = "/create")
     public String createLanguageSubmit(@ModelAttribute Language language, BindingResult result, Model model) {
-        LanguageServiceImpl languageService = new LanguageServiceImpl(languageRepository);
         languageService.createLanguage(language);
 
         if (result.hasErrors()) {
