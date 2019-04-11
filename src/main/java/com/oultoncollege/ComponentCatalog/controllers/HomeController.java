@@ -1,5 +1,11 @@
 package com.oultoncollege.ComponentCatalog.controllers;
 
+import com.oultoncollege.ComponentCatalog.repositories.ComponentRepository;
+import com.oultoncollege.ComponentCatalog.repositories.LanguageRepository;
+import com.oultoncollege.ComponentCatalog.services.ComponentService;
+import com.oultoncollege.ComponentCatalog.services.ComponentServiceImpl;
+import com.oultoncollege.ComponentCatalog.services.LanguageService;
+import com.oultoncollege.ComponentCatalog.services.LanguageServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,8 +15,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/*")
 public class HomeController {
 
+    private ComponentService compService;
+    private LanguageService langService;
+
+    public HomeController(ComponentRepository compRepository, LanguageRepository langRepository) {
+        this.compService = new ComponentServiceImpl(compRepository);
+        this.langService = new LanguageServiceImpl(langRepository);
+    }
+
     @RequestMapping
-    public String index() {
+    public String index(Model model) {
+        model.addAttribute("languages", langService.getAllLanguages());
+
         return "index";
     }
 
