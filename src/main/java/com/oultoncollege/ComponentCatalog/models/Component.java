@@ -26,7 +26,7 @@ public class Component implements Serializable {
     private String code;
 
     @NotNull
-    @ManyToOne()
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "language_id")
     private Language language;
 

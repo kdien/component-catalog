@@ -1,6 +1,5 @@
 package com.oultoncollege.ComponentCatalog.services;
 
-import com.oultoncollege.ComponentCatalog.models.Component;
 import com.oultoncollege.ComponentCatalog.models.Language;
 
 import java.util.List;
@@ -20,6 +19,4 @@ public interface LanguageService {
     List<Language> getAllLanguages();
 
     long countLanguages();
-
-    List<Component> getComponents(Language language);
 }

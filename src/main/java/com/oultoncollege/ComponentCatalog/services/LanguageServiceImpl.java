@@ -57,10 +57,4 @@ public class LanguageServiceImpl implements LanguageService {
         return languageRepository.count();
     }
 
-    @Override
-    public List<Component> getComponents(Language language) {
-        // get all components with the same language ID as the passed language
-        Language selectedLang = getLanguage(language.getLangId());
-        return null;
-    }
 }
