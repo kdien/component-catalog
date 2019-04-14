@@ -14,7 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping(path = "/component/*")
+@RequestMapping("/component/*")
 public class ComponentController {
 
     private ComponentService compService;
@@ -25,62 +25,22 @@ public class ComponentController {
         this.langService = new LanguageServiceImpl(langRepository);
     }
 
-    @GetMapping(path = "/add")
-    public @ResponseBody
-    String addNewComponent
-        (@RequestParam String name,
-         @RequestParam String description,
-         @RequestParam @Nullable String html,
-         @RequestParam @Nullable String css,
-         @RequestParam @Nullable String js,
-         @RequestParam @Nullable String code,
-         @RequestParam Integer langId) {
-
-        Component c = new Component();
-        c.setName(name);
-        c.setDescription(description);
-        c.setHtml(html);
-        c.setCss(css);
-        c.setJs(js);
-        c.setCode(code);
-
-        Language lang = new Language();
-        lang.setLangId(langId);
-        c.setLanguage(lang);
-
-        compService.createComponent(c);
-        return "Saved";
+    @GetMapping
+    public String listAllComponents(Model model) {
+        model.addAttribute("components", compService.getAllComponents());
+        return "component/index";
     }
 
-    @GetMapping(path = "/all")
-    public @ResponseBody
-    Iterable<Component> getAllComponents() {
-        return compService.getAllComponents();
-    }
-
-    @GetMapping(path = "")
-    public String component(@RequestParam int id, Model model) {
-        Component component = compService.getComponent(id);
-        Language language = langService.getLanguage(component.getLanguage().getLangId());
-
-        model.addAttribute("component", component);
-        model.addAttribute("language", language);
-
-        return "home/component";
-    }
-
-    @GetMapping(path = "/create")
-    public String createComponent(Model model) {
+    @GetMapping("/create")
+    public String createComponentForm(Model model) {
         model.addAttribute("component", new Component());
         model.addAttribute("languages", langService.getAllLanguages());
-
         return "component/create";
     }
 
-    @PostMapping(path = "/create")
-    public String submitComponent(@ModelAttribute Component component) {
+    @PostMapping("/create")
+    public String createComponentSubmit(@ModelAttribute Component component) {
         compService.createComponent(component);
-
-        return "redirect:/";
+        return "redirect:/component/";
     }
 }
