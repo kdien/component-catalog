@@ -1,23 +1,22 @@
-<th:block th:fragment="sidebar" xmlns:th="http://www.thymeleaf.org">
+<th:block data-th-fragment="sidebar" xmlns:th="http://www.w3.org/1999/xhtml">
 
-    <div class="h-100 collapse show" id="sidebar-collapses">
+    <div class="collapse show" id="sidebar-collapses">
         <!-- Sidebar -->
-        <aside id="sidebar" class=" h-100">
+        <aside class="h-100" id="sidebar">
 
-            <div style="margin-right:-49px;text-align:right;">
-                <a class="btn" style="background: #6d7fcc;" id="menuToggle" href="#">
+            <div id="menuToggleWrapper">
+                <button class="btn" id="menuToggle">
                     <i class="fas fa-chevron-left text-white p-1" id="iconToggle"></i>
-                </a>
+                </button>
             </div>
-            <ul class="navbar-nav mr-auto p-2" id="searchBar">
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search"
-                           aria-label="Search">
+
+            <div id="searchBar">
+                <form class="form-inline">
+                    <input class="form-control w-100 mr-sm-2" type="text" placeholder="Search" aria-label="Search">
                 </form>
-            </ul>
+            </div>
 
             <ul class="list-unstyled components">
-
                 <li class="active" data-th-each="language : ${@getLanguages}" >
                     <a data-th-href="'#' + ${language.name}" data-th-text="${language.name}" class="dropdown-toggle" data-toggle="collapse" aria-expanded="false"></a>
                     <ul class="collapse list-unstyled" data-th-id="${language.name}">
@@ -26,7 +25,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="category-list-item">
+                <!--<li class="category-list-item">
                     <div class="list-button">
                         <button type="button" class="btn btn-primary create-button">
                             <i class="fas fa-plus"></i>
@@ -56,7 +55,7 @@
                                    value="CfDJ8BNuMcorNAVPhe40goMcsiUUuWWsAeeFJ0DrrV1zVQcS__NS9xVWFiB1uKEvAHBOM3bkdcZPXNKp-dZ75U6zSFMK_9OFzFTZAtpc0syi-lsRz5TANDERaco0cC3UzzO_U8nnXJeASnzEmXH2ZtYO1cq-rtKoztTr53tkgZcYyCx5jQrRqz9xrCP4kRKXrmvs7A">
                         </form>
                     </div>
-                </li>
+                </li>-->
             </ul>
         </aside>
         <!--End of sidebar-->

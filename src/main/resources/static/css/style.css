@@ -1,23 +1,26 @@
-/*
-    ADDITIONAL DEMO STYLE, NOT IMPORTANT TO MAKE THINGS WORK BUT TO MAKE IT A BIT NICER :)
-*/
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
 * {
     margin: 0;
     padding: 0;
 }
 
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
-.footer{
-    height:7vh;
-}
-.navbar{
-    height:8vh;
-}
 body, html {
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
     height: 100%;
-    overflow-y: hidden;
+}
+
+#sidebar {
+    background: #4e5369;
+    color: #fff;
+    transition: all 0.3s;
+    min-width: 320px;
+    max-width: 320px;
+}
+
+#sidebar.active {
+    margin-left: -250px;
 }
 
 #sidebar p {
@@ -27,9 +30,7 @@ body, html {
     line-height: 1.7em;
     color: #999;
 }
-#searchBar{
-    margin-top:-50px;
-}
+
 #sidebar a, #sidebar a:hover, #sidebar a:focus {
     color: inherit;
     text-decoration: none;
@@ -38,13 +39,7 @@ body, html {
 
 #sidebar-collapses {
     transition: all 1s;
-    margin-right:50px;
-}
-
-#sidebar {
-    background: #4e5369;
-    color: #fff;
-    transition: all 0.3s;
+    margin-right: 3.75em;
 }
 
 #sidebar .sidebar-header {
@@ -83,6 +78,35 @@ body, html {
     background: #6d7fcc;
 }
 
+#sidebar a[data-toggle="collapse"] {
+    position: relative;
+}
+
+#sidebar .dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+#sidebar a, #sidebar a:hover, #sidebar a:focus {
+    border-radius: 0;
+}
+
+#searchBar {
+    margin-top: -45px;
+}
+
+#menuToggleWrapper {
+    margin-right: -50px;
+    text-align: right;
+}
+
+button#menuToggle {
+    background: #6d7fcc;
+}
+
 .row {
     height: 100% !important;
 }
@@ -96,41 +120,18 @@ body, html {
     padding-left: 0;
 }
 
-#sidebar a[data-toggle="collapse"] {
-    position: relative;
-}
-
-#sidebar .dropdown-toggle::after {
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-}
-
-.create-button{
+.create-button {
     z-index: 1;
 }
 
-.list-detail{
-    margin-left:-320px;
+.list-detail {
+    margin-left: -320px;
     transition: all 0.5s;
 }
-#sidebar a, #sidebar a:hover, #sidebar a:focus{
-    border-radius:0px;
+
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    border-radius: 0;
 }
-
-[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled){
-    border-radius: 0px;
-}
-
-
-
-#sidebar {
-    min-width: 250px;
-    max-width: 250px;
-}
-
 
 .li.category-list-item {
     display: grid;
@@ -140,7 +141,7 @@ body, html {
 
 }
 
-.category-list-item{
+.category-list-item {
     display: flex;
     max-width: 320px;
 }
@@ -173,11 +174,6 @@ body, html {
     align-items: stretch;
 }
 
-#sidebar {
-    min-width: 320px;
-    max-width: 320px;
-}
-
 #addButton {
     margin-bottom: 3.5em;
 }
@@ -189,20 +185,17 @@ body, html {
 }
 
 .list-button {
-    height: 0px;
+    height: 0;
     z-index: 1;
 }
 
-.create-form{
+.create-form {
     display: flex;
 }
+
 .rotate {
     transform: rotate(45deg);
     transition-duration: .25s;
-}
-
-#sidebar.active {
-    margin-left: -250px;
 }
 
 main, .wrapper {
@@ -234,7 +227,7 @@ i {
     width: 100%;
 }
 
-.appear{
+.appear {
     margin-left: 0;
 }
 
@@ -274,8 +267,8 @@ i {
     cursor: text;
 }
 
-.alert{
-    padding:.65rem.25rem!important;
+.alert {
+    padding: .65rem .25rem !important;
 }
 
 .form-field-control {
@@ -342,7 +335,8 @@ i {
 .hiddenLeft {
     margin-left: -320px;
 }
-.category-list-item{
-    position:absolute;
-    bottom:7vh;
+
+.category-list-item {
+    position: absolute;
+    bottom: 7vh;
 }

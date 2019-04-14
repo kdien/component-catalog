@@ -1,6 +1,16 @@
-$(function() {
-    $("#menuToggle").on("click", function() {
+$(function () {
+    $("#menuToggle").on("click", function () {
         toggleMenuIcon();
+    });
+
+    // Hide create form by default
+
+    // Click plus button to show and hide form
+    $(".create-button").click(function () {
+        $(this).find("i").toggleClass("rotate");
+        $(this).toggleClass("button-click");
+        $(".list-detail").toggleClass("appear");
+        $(".create-form input[type='text']").focus();
     });
 
     // Used for material design form inputs
@@ -33,15 +43,3 @@ function toggleMenuIcon() {
     $("#iconToggle").toggleClass("fa-chevron-left fa-chevron-right");
     $("#sidebar-collapses").toggleClass("hiddenLeft");
 }
-
-// Hide create form by default
-
-// Click plus button to show and hide form
-$(".create-button").click(function () {
-    $(this).find("i").toggleClass("rotate");
-    $(this).toggleClass("button-click");
-    $(".list-detail").toggleClass("appear");
-    $(".create-form input[type='text']").focus();
-});
-
-

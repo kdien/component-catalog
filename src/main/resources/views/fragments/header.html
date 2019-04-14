@@ -1,4 +1,4 @@
-<th:block th:fragment="header" xmlns:th="http://www.thymeleaf.org">
+<th:block data-th-fragment="header" xmlns:th="http://www.w3.org/1999/xhtml">
     <!DOCTYPE HTML>
     <html lang="en">
     <head>
@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="keywords" content="component,catalog">
         <meta name="author" content="Dylan lane, Manuel Doucet, Tristan Lannigan, Khoa Dien, Kizzy Wattier">
-        <title th:text="'Component Catalog: '+ ${pageTitle}"></title>
+        <title data-th-text="'Component Catalog: '+ ${pageTitle}"></title>
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -19,5 +19,5 @@
     <body>
     <!--nav content-->
     <div data-th-replace="~{fragments/nav :: nav}"></div>
-    <div class="container-fluid main" style="display:flex; height:85vh">
+    <div class="container-fluid d-flex">
 </th:block>
