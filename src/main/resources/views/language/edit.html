@@ -1,0 +1,18 @@
+<!--header content-->
+<div data-th-replace="~{fragments/header :: header}"></div>
+<div data-th-replace="~{fragments/sidebar :: sidebar}"></div>
+
+<!--body content-->
+<div>
+    <h1>Edit Language</h1>
+    <form action="#" method="post" data-th-action="'/language/edit/' + ${language.getLangId()}"
+          data-th-object="${language}">
+        Name: <input type="text" class="mr-2" data-th-field="*{name}">
+        <button type="submit" class="btn btn-success">
+            <i class="fas fa-check"></i>
+        </button>
+    </form>
+</div>
+
+<!--footer content-->
+<div data-th-replace="~{fragments/footer :: footer}"></div>

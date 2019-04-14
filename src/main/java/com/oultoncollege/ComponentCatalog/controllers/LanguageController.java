@@ -22,7 +22,13 @@ public class LanguageController {
         languageService = new LanguageServiceImpl(repository);
     }
 
-    @GetMapping(path = "/create")
+    @GetMapping
+    public String listAllLanguages(Model model) {
+        model.addAttribute("languages", languageService.getAllLanguages());
+        return "language/index";
+    }
+
+    @GetMapping("/create")
     public String createLanguageForm(Model model, @RequestParam(name = "success", required = false) @Nullable Boolean success) {
         model.addAttribute("language", new Language());
 
@@ -32,8 +38,8 @@ public class LanguageController {
         return "language/create";
     }
 
-    @PostMapping(path = "/create")
-    public String createLanguageSubmit(@Valid @ModelAttribute Language language, BindingResult result, Model model) {
+    @PostMapping("/create")
+    public String createLanguageSubmit(@Valid Language language, BindingResult result, Model model) {
         languageService.createLanguage(language);
 
         if (result.hasErrors()) {
@@ -43,5 +49,41 @@ public class LanguageController {
         }
 
         return "redirect:/language/create";
+    }
+
+    @GetMapping("/edit/{id}")
+    public String editLanguageForm(@PathVariable("id") int id, Model model) {
+        Language language = languageService.getLanguage(id);
+
+        if (language != null)
+            model.addAttribute("language", language);
+
+        return "/language/edit";
+    }
+
+    @PostMapping("edit/{id}")
+    public String editLanguageSubmit(@PathVariable("id") int id, @Valid Language language, BindingResult result, Model model) {
+        language.setLangId(id);
+        languageService.editLanguage(language);
+        model.addAttribute("languages", languageService.getAllLanguages());
+        return "redirect:/language/";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteLanguageForm(@PathVariable("id") int id, Model model) {
+        Language language = languageService.getLanguage(id);
+
+        if (language != null)
+            model.addAttribute("language", language);
+
+        return "/language/delete";
+    }
+
+    @PostMapping("delete/{id}")
+    public String deleteLanguageSubmit(@PathVariable("id") int id, @Valid Language language, BindingResult result, Model model) {
+        language.setLangId(id);
+        languageService.deleteLanguage(language);
+        model.addAttribute("languages", languageService.getAllLanguages());
+        return "redirect:/language/";
     }
 }

@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<!--header content-->
+<div data-th-replace="~{fragments/header :: header}"></div>
+<div data-th-replace="~{fragments/sidebar :: sidebar}"></div>
 
-</body>
-</html>
+<!--body content-->
+<div>
+    <h1>Delete Language</h1>
+    <p data-th-text="'Are you sure you want to delete ' + ${language.name} + '?'"></p>
+    <form action="#" method="post" data-th-action="'/language/delete/' + ${language.getLangId()}"
+          data-th-object="${language}">
+        <input type="submit" value="Delete" class="btn btn-danger mr-2">
+        <a class="btn btn-light" href="/language/">Cancel</a>
+    </form>
+</div>
+
+<!--footer content-->
+<div data-th-replace="~{fragments/footer :: footer}"></div>

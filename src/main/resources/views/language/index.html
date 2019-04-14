@@ -1,0 +1,22 @@
+<!--header content-->
+<div data-th-replace="~{fragments/header :: header}"></div>
+<div data-th-replace="~{fragments/sidebar :: sidebar}"></div>
+
+<!--body content-->
+<div>
+    <p class="mb-3">
+        <a class="btn btn-primary" title="Add Language" href="/language/create"><i class="fas fa-plus"></i> Add Language</a>
+    </p>
+    <ul class="list-group">
+        <li class="list-group-item" data-th-each="language : ${languages}">
+            <a data-th-href="'/language/edit/' + ${language.getLangId()}" title="Edit"><i
+                    class="fas fa-edit text-warning"></i></a>
+            <a data-th-href="'/language/delete/' + ${language.getLangId()}" title="Delete"><i
+                    class="fas fa-trash-alt text-danger"></i></a>
+            <span data-th-text="${language.name}"></span>
+        </li>
+    </ul>
+</div>
+
+<!--footer content-->
+<div data-th-replace="~{fragments/footer :: footer}"></div>

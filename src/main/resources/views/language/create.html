@@ -9,8 +9,10 @@
 
     <h1>Create New Language</h1>
     <form action="#" method="post" data-th-action="@{/language/create}" data-th-object="${language}">
-        <p>Name: <input type="text" data-th-field="*{name}"></p>
-        <p><input type="submit" value="Submit"></p>
+        Name: <input type="text" class="mr-2" data-th-field="*{name}">
+        <button type="submit" class="btn btn-success">
+            <i class="fas fa-plus"></i>
+        </button>
     </form>
 </div>
 
