@@ -4,28 +4,40 @@
 
 <!--body content-->
 <div class="w-100">
-    <table class="table w-100">
+    <table class="table w-100 table-hover">
         <thead class="thead-dark">
-            <tr>
-                <th>Language</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th></th>
-            </tr>
+        <tr>
+            <th>Language</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th></th>
+        </tr>
         </thead>
         <tbody>
-            <tr data-th-each="component : ${components}">
+        <tr data-th-each="component : ${components}">
 
-                <td data-th-text="${component.name}"></td>
-                <td data-th-text="${component.description}"></td>
-                <td data-th-text="${component.getLanguage().getName()}"></td>
-                <td>
-                    <a title="Edit" class="px-2" data-th-href="'/component/edit/' + ${component.getId()}"><i
-                            class="fas fa-edit text-warning"></i></a>
-                    <a title="Delete" class="px-2" data-th-href="'/component/delete/' + ${component.getId()}"><i
-                            class="fas fa-trash-alt text-danger"></i></a>
-                </td>
-            </tr>
+            <td data-th-text="${component.name}"></td>
+            <td data-th-text="${component.description}"></td>
+            <td data-th-text="${component.getLanguage().getName()}"></td>
+            <td class="text-center">
+                <a title="Edit" class="px-2" data-th-href="'/component/edit/' + ${component.getId()}"><i
+                        class="fas fa-edit text-warning"></i></a>
+                <a title="Delete" class="px-2" data-th-href="'/component/delete/' + ${component.getId()}"><i
+                        class="fas fa-trash-alt text-danger"></i></a>
+            </td>
+        </tr>
+        <tr id="pointerNone">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+                <p class="mb-3 text-center">
+                    <a class="btn btn-primary text-right m-4" title="Add Component" href="/component/create"><i
+                            class="fas fa-plus"></i> Add
+                        Component</a>
+                </p>
+            </td>
+        </tr>
         </tbody>
     </table>
 
@@ -39,10 +51,6 @@
             <span data-th-text="${language.name}"></span>
         </li>
     </ul>
-    <p class="mb-3 text-right">
-        <a class="btn btn-primary text-right m-4" title="Add Component" href="/component/create"><i class="fas fa-plus"></i> Add
-            Component</a>
-    </p>
 </div>
 
 <!--footer content-->
