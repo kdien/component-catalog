@@ -1,6 +1,7 @@
 package com.oultoncollege.ComponentCatalog.config;
 
 import com.oultoncollege.ComponentCatalog.models.Language;
+import com.oultoncollege.ComponentCatalog.repositories.ComponentRepository;
 import com.oultoncollege.ComponentCatalog.repositories.LanguageRepository;
 import com.oultoncollege.ComponentCatalog.services.LanguageServiceImpl;
 import org.springframework.context.annotation.Bean;
@@ -22,8 +23,8 @@ public class WebAppConfig implements WebMvcConfigurer {
 
     private LanguageServiceImpl service;
 
-    public WebAppConfig(LanguageRepository repository) {
-        this.service = new LanguageServiceImpl(repository);
+    public WebAppConfig(LanguageRepository langRepository, ComponentRepository compRepository) {
+        this.service = new LanguageServiceImpl(langRepository, compRepository);
     }
 
     @Override

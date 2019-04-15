@@ -4,9 +4,6 @@
 
 <!--body content-->
 <div class="col-12" id="successBox">
-    <div class="alert alert-success col-lg-12" role="alert" data-th-if="${success} == true" data-th-text="'New language added'"></div>
-    <div class="alert alert-danger" role="alert" data-th-if="${success} == false" data-th-text="'Error adding new language'"></div>
-
     <h1>Create New Language</h1>
     <form action="#" method="post" data-th-action="@{/language/create}" data-th-object="${language}">
         Name: <input type="text" class="mr-2" data-th-field="*{name}">

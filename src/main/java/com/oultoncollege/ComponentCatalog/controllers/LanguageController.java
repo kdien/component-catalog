@@ -1,6 +1,7 @@
 package com.oultoncollege.ComponentCatalog.controllers;
 
 import com.oultoncollege.ComponentCatalog.models.Language;
+import com.oultoncollege.ComponentCatalog.repositories.ComponentRepository;
 import com.oultoncollege.ComponentCatalog.repositories.LanguageRepository;
 import com.oultoncollege.ComponentCatalog.services.LanguageService;
 import com.oultoncollege.ComponentCatalog.services.LanguageServiceImpl;
@@ -18,8 +19,8 @@ public class LanguageController {
 
     private LanguageService languageService;
 
-    public LanguageController(LanguageRepository repository) {
-        languageService = new LanguageServiceImpl(repository);
+    public LanguageController(LanguageRepository languageRepository, ComponentRepository componentRepository) {
+        languageService = new LanguageServiceImpl(languageRepository, componentRepository);
     }
 
     @GetMapping
@@ -41,14 +42,7 @@ public class LanguageController {
     @PostMapping("/create")
     public String createLanguageSubmit(@Valid Language language, BindingResult result, Model model) {
         languageService.createLanguage(language);
-
-        if (result.hasErrors()) {
-            model.addAttribute("success", false);
-        } else {
-            model.addAttribute("success", true);
-        }
-
-        return "redirect:/language/create";
+        return "redirect:/language/";
     }
 
     @GetMapping("/edit/{id}")
@@ -65,7 +59,6 @@ public class LanguageController {
     public String editLanguageSubmit(@PathVariable("id") int id, @Valid Language language, BindingResult result, Model model) {
         language.setLangId(id);
         languageService.editLanguage(language);
-        model.addAttribute("languages", languageService.getAllLanguages());
         return "redirect:/language/";
     }
 
@@ -80,10 +73,9 @@ public class LanguageController {
     }
 
     @PostMapping("/delete/{id}")
-    public String deleteLanguageSubmit(@PathVariable("id") int id, @Valid Language language, BindingResult result, Model model) {
-        language.setLangId(id);
+    public String deleteLanguageSubmit(@PathVariable("id") int id, BindingResult result, Model model) {
+        Language language = languageService.getLanguage(id);
         languageService.deleteLanguage(language);
-        model.addAttribute("languages", languageService.getAllLanguages());
         return "redirect:/language/";
     }
 }

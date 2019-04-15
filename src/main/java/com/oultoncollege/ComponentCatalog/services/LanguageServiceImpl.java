@@ -2,6 +2,7 @@ package com.oultoncollege.ComponentCatalog.services;
 
 import com.oultoncollege.ComponentCatalog.models.Component;
 import com.oultoncollege.ComponentCatalog.models.Language;
+import com.oultoncollege.ComponentCatalog.repositories.ComponentRepository;
 import com.oultoncollege.ComponentCatalog.repositories.LanguageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,10 +13,12 @@ import java.util.List;
 public class LanguageServiceImpl implements LanguageService {
 
     private final LanguageRepository languageRepository;
+    private final ComponentRepository componentRepository;
 
     @Autowired
-    public LanguageServiceImpl(LanguageRepository languageRepository) {
+    public LanguageServiceImpl(LanguageRepository languageRepository, ComponentRepository componentRepository) {
         this.languageRepository = languageRepository;
+        this.componentRepository = componentRepository;
     }
 
     @Override
@@ -25,7 +28,7 @@ public class LanguageServiceImpl implements LanguageService {
 
     @Override
     public Language getLanguage(int id) {
-        if(languageRepository.findById(id).isPresent()) {
+        if (languageRepository.findById(id).isPresent()) {
             return languageRepository.findById(id).get();
         }
 
@@ -39,6 +42,11 @@ public class LanguageServiceImpl implements LanguageService {
 
     @Override
     public void deleteLanguage(Language language) {
+        List<Component> components = language.getComponents();
+        for (Component component : components) {
+            componentRepository.delete(component);
+        }
+
         languageRepository.delete(language);
     }
 
