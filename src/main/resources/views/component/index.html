@@ -3,12 +3,8 @@
 <div data-th-replace="~{fragments/sidebar :: sidebar}"></div>
 
 <!--body content-->
-<div>
-    <p class="mb-3">
-        <a class="btn btn-primary" title="Add Component" href="/component/create"><i class="fas fa-plus"></i> Add
-            Component</a>
-    </p>
-    <table class="table">
+<div class="w-100">
+    <table class="table w-100">
         <thead class="thead-dark">
             <tr>
                 <th></th>
@@ -42,6 +38,10 @@
             <span data-th-text="${language.name}"></span>
         </li>
     </ul>
+    <p class="mb-3 text-right">
+        <a class="btn btn-primary text-right m-4" title="Add Component" href="/component/create"><i class="fas fa-plus"></i> Add
+            Component</a>
+    </p>
 </div>
 
 <!--footer content-->

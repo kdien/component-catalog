@@ -51,6 +51,9 @@ body, html {
 #sidebar .sidebar-header {
     padding: 20px;
 }
+.w-100{
+    border-top: 1px solid black;
+}
 
 #sidebar ul.components {
     padding: 20px 0;
@@ -66,6 +69,10 @@ body, html {
     padding: 10px;
     font-size: 1.1em;
     display: block;
+}
+
+.btn-primary{
+    background-color:#6C7ECC;
 }
 
 #sidebar ul li a:hover {
@@ -160,6 +167,7 @@ button#menuToggle:focus {
     display: flex;
     max-width: 320px;
 }
+
 
 .form-control {
     display: block;
