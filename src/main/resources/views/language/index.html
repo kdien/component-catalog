@@ -5,15 +5,15 @@
 <!--body content-->
 <div class="w-100">
     <!--<ul class="list-group">-->
-        <!--<li class="list-group-item" data-th-each="language : ${languages}">-->
-            <!--<a data-th-href="'/language/edit/' + ${language.getLangId()}" title="Edit" class="p-2">-->
-                <!--<i class="fas fa-edit text-warning"></i>-->
-            <!--</a>-->
-            <!--<a data-th-href="'/language/delete/' + ${language.getLangId()}" title="Delete">-->
-                <!--<i class="fas fa-trash-alt text-danger"></i>-->
-            <!--</a>-->
-            <!--<span data-th-text="${language.name}"></span>-->
-        <!--</li>-->
+    <!--<li class="list-group-item" data-th-each="language : ${languages}">-->
+    <!--<a data-th-href="'/language/edit/' + ${language.getLangId()}" title="Edit" class="p-2">-->
+    <!--<i class="fas fa-edit text-warning"></i>-->
+    <!--</a>-->
+    <!--<a data-th-href="'/language/delete/' + ${language.getLangId()}" title="Delete">-->
+    <!--<i class="fas fa-trash-alt text-danger"></i>-->
+    <!--</a>-->
+    <!--<span data-th-text="${language.name}"></span>-->
+    <!--</li>-->
     <!--</ul>-->
     <table class="table w-100 table-hover">
         <thead class="thead-dark">
@@ -25,19 +25,24 @@
         <tbody>
         <tr data-th-each="language : ${languages}">
             <td data-th-text="${language.name}"></td>
-            <td>
+            <td class="text-center">
                 <a title="Edit" class="px-2" data-th-href="'/language/edit/' + ${language.getLangId()}"><i
                         class="fas fa-edit text-warning"></i></a>
                 <a title="Delete" class="px-2" data-th-href="'/language/delete/' + ${language.getLangId()}"><i
                         class="fas fa-trash-alt text-danger"></i></a>
             </td>
-
+        </tr>
+        <tr id="pointerNone">
+            <td></td>
+            <td>
+                <p class="mb-3 m-auto text-center">
+                    <a class="btn btn-primary px2" title="Add Language" href="/language/create"><i
+                            class="fas fa-plus"></i> Add Language</a>
+                </p>
+            </td>
         </tr>
         </tbody>
     </table>
-    <p class="mb-3 m-auto text-right">
-        <a class="btn btn-primary m-4" title="Add Language" href="/language/create"><i class="fas fa-plus"></i> Add Language</a>
-    </p>
 </div>
 
 <!--footer content-->
