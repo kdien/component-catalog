@@ -40,6 +40,6 @@ $(function () {
 });
 
 function toggleMenuIcon() {
-    $("#iconToggle").toggleClass("fa-chevron-left fa-chevron-right");
+    $("#iconToggle").toggleClass("fa-angle-left fa-angle-right");
     $("#sidebar-collapses").toggleClass("hiddenLeft");
 }
