@@ -6,6 +6,45 @@ $(function () {
         toggleMenuIcon();
     });
 
+    var editorHTML = ace.edit("editorHTML", {
+        theme: "ace/theme/chrome",
+        mode: "ace/mode/html",
+        fontSize: "14pt",
+        minLines: 2,
+        maxLines: 40,
+        autoScrollEditorIntoView: true
+    });
+    editorHTML.renderer.setScrollMargin(10, 10, 10, 10);
+
+    var editorCSS = ace.edit("editorCSS", {
+        theme: "ace/theme/chrome",
+        mode: "ace/mode/css",
+        fontSize: "14pt",
+        minLines: 2,
+        maxLines: 40,
+        autoScrollEditorIntoView: true
+    });
+    editorCSS.renderer.setScrollMargin(10, 10, 10, 10);
+
+    var editorJS = ace.edit("editorJS", {
+        theme: "ace/theme/chrome",
+        mode: "ace/mode/javascript",
+        fontSize: "14pt",
+        minLines: 2,
+        maxLines: 40,
+        autoScrollEditorIntoView: true
+    });
+    editorJS.renderer.setScrollMargin(10, 10, 10, 10);
+
+    var editorCode = ace.edit("editorCode", {
+        theme: "ace/theme/chrome",
+        mode: "ace/mode/java",
+        fontSize: "14pt",
+        minLines: 2,
+        maxLines: 40,
+        autoScrollEditorIntoView: true
+    });
+    editorCode.renderer.setScrollMargin(10, 10, 10, 10);
 
     // Hide create form by default
 
