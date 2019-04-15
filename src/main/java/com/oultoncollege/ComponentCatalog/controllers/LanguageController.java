@@ -61,7 +61,7 @@ public class LanguageController {
         return "/language/edit";
     }
 
-    @PostMapping("edit/{id}")
+    @PostMapping("/edit/{id}")
     public String editLanguageSubmit(@PathVariable("id") int id, @Valid Language language, BindingResult result, Model model) {
         language.setLangId(id);
         languageService.editLanguage(language);
@@ -79,7 +79,7 @@ public class LanguageController {
         return "/language/delete";
     }
 
-    @PostMapping("delete/{id}")
+    @PostMapping("/delete/{id}")
     public String deleteLanguageSubmit(@PathVariable("id") int id, @Valid Language language, BindingResult result, Model model) {
         language.setLangId(id);
         languageService.deleteLanguage(language);
