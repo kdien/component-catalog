@@ -3,19 +3,40 @@
 <div data-th-replace="~{fragments/sidebar :: sidebar}"></div>
 
 <!--body content-->
-<div>
-    <p class="mb-3">
-        <a class="btn btn-primary" title="Add Language" href="/language/create"><i class="fas fa-plus"></i> Add Language</a>
+<div class="w-100">
+    <!--<ul class="list-group">-->
+        <!--<li class="list-group-item" data-th-each="language : ${languages}">-->
+            <!--<a data-th-href="'/language/edit/' + ${language.getLangId()}" title="Edit" class="p-2">-->
+                <!--<i class="fas fa-edit text-warning"></i>-->
+            <!--</a>-->
+            <!--<a data-th-href="'/language/delete/' + ${language.getLangId()}" title="Delete">-->
+                <!--<i class="fas fa-trash-alt text-danger"></i>-->
+            <!--</a>-->
+            <!--<span data-th-text="${language.name}"></span>-->
+        <!--</li>-->
+    <!--</ul>-->
+    <table class="table w-100">
+        <thead class="thead-dark">
+        <tr>
+            <th class="w-25"></th>
+            <th>Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr data-th-each="language : ${languages}">
+            <td>
+                <a title="Edit" class="px-2" data-th-href="'/language/edit/' + ${language.getLangId()}"><i
+                        class="fas fa-edit text-warning"></i></a>
+                <a title="Delete" class="px-2" data-th-href="'/language/delete/' + ${language.getLangId()}"><i
+                        class="fas fa-trash-alt text-danger"></i></a>
+            </td>
+            <td data-th-text="${language.name}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <p class="mb-3 m-auto text-right">
+        <a class="btn btn-primary m-4" title="Add Language" href="/language/create"><i class="fas fa-plus"></i> Add Language</a>
     </p>
-    <ul class="list-group">
-        <li class="list-group-item" data-th-each="language : ${languages}">
-            <a data-th-href="'/language/edit/' + ${language.getLangId()}" title="Edit"><i
-                    class="fas fa-edit text-warning"></i></a>
-            <a data-th-href="'/language/delete/' + ${language.getLangId()}" title="Delete"><i
-                    class="fas fa-trash-alt text-danger"></i></a>
-            <span data-th-text="${language.name}"></span>
-        </li>
-    </ul>
 </div>
 
 <!--footer content-->
