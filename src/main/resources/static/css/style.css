@@ -43,6 +43,9 @@ body, html {
 
 #sidebar-collapses {
     transition: all 1s;
+    overflow-y: auto;
+    overflow-x: hidden;
+
 }
 
 #sidebar .sidebar-header {
@@ -284,6 +287,10 @@ i {
     overflow: hidden;
     position: relative;
     width: 100%;
+}
+
+.form-inline{
+    display:unset;
 }
 
 .form-field-control::after {
