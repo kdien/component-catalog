@@ -83,6 +83,7 @@ $(function () {
 });
 
 function toggleMenuIcon() {
-    $("#menuToggleWrapper").toggle("slow");
+    $("#menuToggleWrapper").toggleClass("showToggleWrapper");
     $("#sidebar-collapses").toggleClass("hiddenLeft");
+    $("#pageContent").toggleClass("margin50");
 }

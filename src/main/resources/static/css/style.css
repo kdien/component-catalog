@@ -11,7 +11,7 @@ body, html {
     height: 100%;
 }
 
-#navbar {
+.navbar {
     height: 8vh;
 }
 
@@ -114,10 +114,17 @@ body, html {
 }
 
 #menuToggleWrapper {
-    background: #343a40;
+    background: #4e5369;
     padding-top: 42vh;
     padding-right: 5px;
-    display:none;
+    position:absolute;
+    height:85vh;
+    width:50px;
+    margin-left:-50px;
+    transition:margin-left 2000ms ease;
+}
+.showToggleWrapper{
+    margin-left:0px!important;
 }
 
 button#menuToggle {
@@ -135,7 +142,12 @@ button#menuToggle:focus {
 #main {
     height: 85vh;
 }
-
+#pageContent{
+    transition:margin-left 1s;
+}
+.margin50{
+    margin-left:50px;
+}
 .row {
     height: 100% !important;
 }
@@ -364,7 +376,9 @@ i {
     #menuCollapse {
         display: block !important;
     }
-
+    .navbar{
+        height:unset;
+    }
     .flex {
         display: flex;
     }
