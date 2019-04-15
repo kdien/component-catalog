@@ -11,6 +11,10 @@ body, html {
     height: 100%;
 }
 
+#navbar {
+    height: 8vh;
+}
+
 #sidebar {
     background: #4e5369;
     color: #fff;
@@ -39,7 +43,6 @@ body, html {
 
 #sidebar-collapses {
     transition: all 1s;
-    margin-right: 3.75em;
 }
 
 #sidebar .sidebar-header {
@@ -94,17 +97,26 @@ body, html {
     border-radius: 0;
 }
 
-#searchBar {
-    margin-top: -45px;
-}
-
 #menuToggleWrapper {
-    margin-right: -50px;
-    text-align: right;
+    background: lightgray;
+    padding-top: 42vh;
+    padding-right: 5px;
 }
 
 button#menuToggle {
-    background: #6d7fcc;
+    padding: 0;
+}
+
+button#menuToggle i {
+    font-size: 3em;
+}
+
+button#menuToggle:focus {
+    box-shadow: none;
+}
+
+#main {
+    height: 85vh;
 }
 
 .row {
@@ -196,10 +208,6 @@ button#menuToggle {
 .rotate {
     transform: rotate(45deg);
     transition-duration: .25s;
-}
-
-main, .wrapper {
-    height: 100%;
 }
 
 i {
@@ -339,4 +347,8 @@ i {
 .category-list-item {
     position: absolute;
     bottom: 7vh;
+}
+
+#footer {
+    height: 7vh;
 }
