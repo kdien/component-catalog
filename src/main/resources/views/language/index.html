@@ -15,22 +15,23 @@
             <!--<span data-th-text="${language.name}"></span>-->
         <!--</li>-->
     <!--</ul>-->
-    <table class="table w-100">
+    <table class="table w-100 table-hover">
         <thead class="thead-dark">
         <tr>
-            <th class="w-25"></th>
-            <th>Name</th>
+            <th class="w-75">Name</th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
         <tr data-th-each="language : ${languages}">
+            <td data-th-text="${language.name}"></td>
             <td>
                 <a title="Edit" class="px-2" data-th-href="'/language/edit/' + ${language.getLangId()}"><i
                         class="fas fa-edit text-warning"></i></a>
                 <a title="Delete" class="px-2" data-th-href="'/language/delete/' + ${language.getLangId()}"><i
                         class="fas fa-trash-alt text-danger"></i></a>
             </td>
-            <td data-th-text="${language.name}"></td>
+
         </tr>
         </tbody>
     </table>

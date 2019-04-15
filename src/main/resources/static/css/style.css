@@ -76,13 +76,11 @@ body, html {
 }
 
 #sidebar ul li a:hover {
-    color: #7386D5;
-    background: #fff;
+    background: #7386D5;
 }
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
     color: #fff;
-    background: #6d7fcc;
 }
 
 #sidebar ul ul a {
@@ -367,4 +365,11 @@ i {
 
 #footer {
     height: 7vh;
+}
+.fas{
+    text-shadow:2px 0px 2px gray;
+    transition:text-shadow 700ms;
+}
+.fas:hover{
+    text-shadow:2px 0px 2px black;
 }
