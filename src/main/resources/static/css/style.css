@@ -59,8 +59,8 @@ body, html {
     margin-top:0.5em;
 }
 
-#pointerNone{
-    pointer-events: none;
+#hoverNone:hover{
+    background: none;
 }
 
 #sidebar ul.components {
