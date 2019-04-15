@@ -30,12 +30,8 @@ public class LanguageController {
     }
 
     @GetMapping("/create")
-    public String createLanguageForm(Model model, @RequestParam(name = "success", required = false) @Nullable Boolean success) {
+    public String createLanguageForm(Model model) {
         model.addAttribute("language", new Language());
-
-        if (success != null)
-            model.addAttribute("success", success);
-
         return "language/create";
     }
 
