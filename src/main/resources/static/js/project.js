@@ -1,7 +1,11 @@
 $(function () {
-    $("#menuToggle").on("click", function () {
+    $("#menuClose").on("click", function () {
         toggleMenuIcon();
     });
+    $("#menuOpen").on("click", function () {
+        toggleMenuIcon();
+    });
+
 
     // Hide create form by default
 
@@ -40,6 +44,6 @@ $(function () {
 });
 
 function toggleMenuIcon() {
-    $("#iconToggle").toggleClass("fa-angle-left fa-angle-right");
+    $("#menuToggleWrapper").toggle("slow");
     $("#sidebar-collapses").toggleClass("hiddenLeft");
 }

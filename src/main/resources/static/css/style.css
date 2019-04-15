@@ -114,9 +114,10 @@ body, html {
 }
 
 #menuToggleWrapper {
-    background: lightgray;
+    background: #343a40;
     padding-top: 42vh;
     padding-right: 5px;
+    display:none;
 }
 
 button#menuToggle {
