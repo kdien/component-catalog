@@ -46,18 +46,22 @@ body, html {
     transition: all 1s;
     overflow-y: auto;
     overflow-x: hidden;
-    min-width:320px;
+    min-width: 320px;
 }
 
 #sidebar .sidebar-header {
     padding: 20px;
 }
 
-.text-center{
-    margin-top:0.5em;
+.w-100 {
+    border-top: 1px solid black;
 }
 
-#hoverNone:hover{
+.text-center {
+    margin-top: 0.5em;
+}
+
+#hoverNone:hover {
     background: none;
 }
 
@@ -77,8 +81,8 @@ body, html {
     display: block;
 }
 
-.btn-primary{
-    background-color:#6C7ECC;
+.btn-primary {
+    background-color: #6C7ECC;
 }
 
 #sidebar ul li a:hover {
@@ -115,14 +119,15 @@ body, html {
     background: #4e5369;
     padding-top: 42vh;
     padding-right: 5px;
-    position:absolute;
-    height:85vh;
-    width:50px;
-    margin-left:-50px;
-    transition:margin-left 2000ms ease;
+    position: absolute;
+    height: 85vh;
+    width: 50px;
+    margin-left: -50px;
+    transition: margin-left 2000ms ease;
 }
-.showToggleWrapper{
-    margin-left:0px!important;
+
+.showToggleWrapper {
+    margin-left: 0px !important;
 }
 
 button#menuToggle {
@@ -140,12 +145,15 @@ button#menuToggle:focus {
 #main {
     height: 85vh;
 }
-#pageContent{
-    transition:margin-left 1s;
+
+#pageContent {
+    transition: margin-left 1s;
 }
-.margin50{
-    margin-left:50px;
+
+.margin50 {
+    margin-left: 50px;
 }
+
 .row {
     height: 100% !important;
 }
@@ -314,8 +322,8 @@ i {
     width: 100%;
 }
 
-.form-inline{
-    display:unset;
+.form-inline {
+    display: unset;
 }
 
 .form-field-control::after {
@@ -367,16 +375,18 @@ i {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2em;
-    width: 60%;
+    width: 80%;
 }
 
 @media only screen and (max-width: 800px) {
     #menuCollapse {
         display: block !important;
     }
-    .navbar{
-        height:unset;
+
+    .navbar {
+        height: unset;
     }
+
     .flex {
         display: flex;
     }
@@ -394,13 +404,16 @@ i {
 #footer {
     height: 7vh;
 }
-.fas{
-    text-shadow:2px 0px 2px gray;
-    transition:text-shadow 700ms;
+
+.fas {
+    text-shadow: 2px 0px 2px gray;
+    transition: text-shadow 700ms;
 }
-.fas:hover{
-    text-shadow:2px 0px 2px black;
+
+.fas:hover {
+    text-shadow: 2px 0px 2px black;
 }
-td:first-child, th:first-child{
+
+td:first-child, th:first-child {
     padding-left: 2em;
 }

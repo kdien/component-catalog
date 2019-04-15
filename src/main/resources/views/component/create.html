@@ -6,7 +6,8 @@
 <div class="container" id="component">
     <h1 class="text-center">Create New Component:</h1>
 
-    <form action="#" data-th-action="@{/component/create}" data-th-object="${component}" method="post">
+    <form action="#" data-th-action="@{/component/create}" data-th-object="${component}" method="post"
+          onSubmit="">
 
         <div class="form-field input-wrapper">
             <div class="form-field-control">
@@ -23,24 +24,29 @@
         </div>
 
         <div class="input-wrapper">
-                <label for="editorHTML">HTML:</label>
-                <div id="editorHTML"></div>
+            <label for="editorHTML">HTML:</label>
+            <div id="editorHTML"></div>
         </div>
 
         <div class="input-wrapper">
-                <label for="editorCSS">CSS:</label>
-                <div id="editorCSS"></div>
+            <label for="editorCSS">CSS:</label>
+            <div id="editorCSS"></div>
         </div>
 
         <div class="input-wrapper">
-                <label for="editorHTML">JavaScript:</label>
-                <div id="editorJS"></div>
+            <label for="editorHTML">JavaScript:</label>
+            <div id="editorJS"></div>
         </div>
 
         <div class="input-wrapper">
-                <label for="editorCode">Code:</label>
-                <div data-th-field="*{code}" id="editorCode"></div>
+            <label for="editorCode">Code:</label>
+            <div data-th-field="*{code}" id="editorCode"></div>
         </div>
+
+        <input type="hidden" data-th-field="*{html}" id="html">
+        <input type="hidden" data-th-field="*{css}" id="css">
+        <input type="hidden" data-th-field="*{js}" id="js">
+        <input type="hidden" data-th-field="*{code}" id="code">
 
         <!--<div class="form-field">-->
         <!--<div class="form-field-control">-->
@@ -70,14 +76,15 @@
         <!--</div>-->
         <!--</div>-->
 
-        <!--<div class="form-field">-->
-        <!--<div class="form-field-control">-->
-        <!--<label for="lang-field" class="">Language:</label>-->
-        <!--<select class="custom-select" data-th-field="*{language}" id="lang-field">-->
-        <!--<option data-th-each="language : ${languages}" data-th-text="${language.name}" data-th-value="${language.getLangId()}"></option>-->
-        <!--</select>-->
-        <!--</div>-->
-        <!--</div>-->
+        <div class="form-field input-wrapper">
+            <div class="form-field-control">
+                <label for="lang-field" class="">Language:</label>
+                <select class="custom-select" data-th-field="*{language}" id="lang-field">
+                    <option data-th-each="language : ${languages}" data-th-text="${language.name}"
+                            data-th-value="${language.getLangId()}"></option>
+                </select>
+            </div>
+        </div>
 
         <div class="input-wrapper">
             <input class="btn model-submit" type="submit" value="Submit"/>

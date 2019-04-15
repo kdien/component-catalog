@@ -6,6 +6,7 @@ $(function () {
         toggleMenuIcon();
     });
 
+    // Ace Editor settings
     var editorHTML = ace.edit("editorHTML", {
         theme: "ace/theme/chrome",
         mode: "ace/mode/html",
@@ -45,6 +46,23 @@ $(function () {
         autoScrollEditorIntoView: true
     });
     editorCode.renderer.setScrollMargin(10, 10, 10, 10);
+
+    // Editor event listeners
+    editorHTML.on("change", function() {
+        $("#html").val(editorHTML.getValue());
+    });
+
+    editorCSS.on("change", function() {
+        $("#css").val(editorCSS.getValue());
+    });
+
+    editorJS.on("change", function() {
+        $("#js").val(editorJS.getValue());
+    });
+
+    editorCode.on("change", function() {
+        $("#code").val(editorCode.getValue());
+    });
 
     // Hide create form by default
 
