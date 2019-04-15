@@ -5,6 +5,7 @@ import com.oultoncollege.ComponentCatalog.models.Language;
 import com.oultoncollege.ComponentCatalog.repositories.ComponentRepository;
 import com.oultoncollege.ComponentCatalog.repositories.LanguageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -57,12 +58,11 @@ public class LanguageServiceImpl implements LanguageService {
 
     @Override
     public List<Language> getAllLanguages() {
-        return languageRepository.findAll();
+        return languageRepository.findAll(new Sort(Sort.Direction.ASC, "name"));
     }
 
     @Override
     public long countLanguages() {
         return languageRepository.count();
     }
-
 }

@@ -3,6 +3,7 @@ package com.oultoncollege.ComponentCatalog.models;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
+import java.util.Comparator;
 import java.util.List;
 
 @Entity
@@ -16,7 +17,7 @@ public class Language implements Serializable {
     @NotBlank
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER, mappedBy = "language")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "language")
     private List<Component> components;
 
     public Integer getLangId() {
@@ -36,6 +37,7 @@ public class Language implements Serializable {
     }
 
     public List<Component> getComponents() {
+        components.sort(Comparator.comparing(Component::getName));
         return components;
     }
 }

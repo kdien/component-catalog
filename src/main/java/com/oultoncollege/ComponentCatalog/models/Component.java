@@ -1,6 +1,7 @@
 package com.oultoncollege.ComponentCatalog.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.List;
@@ -13,6 +14,7 @@ public class Component implements Serializable {
     @Column(name = "component_id")
     private Integer id;
 
+    @NotBlank
     private String name;
 
     private String description;

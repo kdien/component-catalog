@@ -3,6 +3,7 @@ package com.oultoncollege.ComponentCatalog.services;
 import com.oultoncollege.ComponentCatalog.models.Component;
 import com.oultoncollege.ComponentCatalog.repositories.ComponentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
@@ -47,7 +48,7 @@ public class ComponentServiceImpl implements ComponentService {
 
     @Override
     public List<Component> getAllComponents() {
-        return componentRepository.findAll();
+        return componentRepository.findAll(new Sort(Sort.Direction.ASC, "name"));
     }
 
     @Override

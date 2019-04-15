@@ -7,9 +7,9 @@
     <table class="table w-100 table-hover">
         <thead class="thead-dark">
         <tr>
-            <th>Language</th>
             <th>Name</th>
             <th>Description</th>
+            <th>Language</th>
             <th></th>
         </tr>
         </thead>
@@ -40,17 +40,6 @@
         </tr>
         </tbody>
     </table>
-
-
-    <ul class="list-group">
-        <li class="list-group-item" data-th-each="language : ${languages}">
-            <a data-th-href="'/language/edit/' + ${language.getLangId()}" title="Edit"><i
-                    class="fas fa-edit text-warning"></i></a>
-            <a data-th-href="'/language/delete/' + ${language.getLangId()}" title="Delete"><i
-                    class="fas fa-trash-alt text-danger"></i></a>
-            <span data-th-text="${language.name}"></span>
-        </li>
-    </ul>
 </div>
 
 <!--footer content-->

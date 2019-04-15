@@ -12,7 +12,7 @@
             </div>
 
             <ul class="list-unstyled components">
-                <li class="active" data-th-each="language : ${@getLanguages}" >
+                <li class="active" data-th-each="language : ${languages}" >
                     <a data-th-href="'#' + ${language.name}" data-th-text="${language.name}" class="dropdown-toggle" data-toggle="collapse" aria-expanded="false"></a>
                     <ul class="collapse list-unstyled" data-th-id="${language.name}">
                         <li data-th-each="component : ${language.getComponents()}">

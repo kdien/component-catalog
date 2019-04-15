@@ -21,12 +21,6 @@ import java.util.List;
 @ComponentScan
 public class WebAppConfig implements WebMvcConfigurer {
 
-    private LanguageServiceImpl service;
-
-    public WebAppConfig(LanguageRepository langRepository, ComponentRepository compRepository) {
-        this.service = new LanguageServiceImpl(langRepository, compRepository);
-    }
-
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/**").addResourceLocations("classpath:/static/");
@@ -53,10 +47,5 @@ public class WebAppConfig implements WebMvcConfigurer {
         ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
         viewResolver.setTemplateEngine(templateEngine());
         return viewResolver;
-    }
-
-    @Bean
-    public List<Language> getLanguages() {
-        return service.getAllLanguages();
     }
 }
