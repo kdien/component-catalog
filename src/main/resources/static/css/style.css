@@ -109,7 +109,6 @@ body, html {
     background: lightgray;
     padding-top: 42vh;
     padding-right: 5px;
-    box-shadow:7px -1px 17px 1px grey;
 }
 
 button#menuToggle {
@@ -372,4 +371,7 @@ i {
 }
 .fas:hover{
     text-shadow:2px 0px 2px black;
+}
+td:first-child{
+    padding-left: 2em;
 }
