@@ -13,7 +13,6 @@ body, html {
 
 .navbar {
     height: 8vh;
-    border-bottom: 1px solid black;
 }
 
 #sidebar {
@@ -53,13 +52,10 @@ body, html {
     padding: 20px;
 }
 
-.w-100 {
-    border-top: 1px solid black;
-}
-
 .text-center {
     margin-top: 0.5em;
 }
+
 
 #hoverNone:hover {
     background: none;
@@ -67,7 +63,6 @@ body, html {
 
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid #47748b;
 }
 
 #sidebar ul p {
@@ -79,6 +74,11 @@ body, html {
     padding: 10px;
     font-size: 1.1em;
     display: block;
+}
+
+.mr-2, .mx-2{
+    margin-left: 3.4em;
+    width: 100%;
 }
 
 .btn-primary {
@@ -116,19 +116,15 @@ body, html {
 }
 
 #menuToggleWrapper {
-    background: #4e5369;
-    padding-top: 42vh;
-    padding-right: 5px;
-    position: absolute;
-    height: 85vh;
-    width: 50px;
-    margin-left: -50px;
-    transition: margin-left 2000ms ease;
-}
-
-.showToggleWrapper {
-    margin-left: 0px !important;
-}
+     background: #4e5369;
+     padding-top: 42vh;
+     padding-right: 5px;
+     position: absolute;
+     height: 85vh;
+     width: 55px;
+     margin-left: -50px;
+     transition: margin-left 2000ms ease;
+ }
 
 button#menuToggle {
     padding: 0;
@@ -154,67 +150,8 @@ button#menuToggle:focus {
     margin-left: 50px;
 }
 
-.row {
-    height: 100% !important;
-}
-
-.col-3 {
-    z-index: 1;
-    height: 100%;
-}
-
-#successBox {
-    padding-left: 0;
-}
-
-.create-button {
-    z-index: 1;
-}
-
-.list-detail {
-    margin-left: -320px;
-    transition: all 0.5s;
-}
-
 [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
     border-radius: 0;
-}
-
-.li.category-list-item {
-    display: grid;
-    grid-template: auto / 75px 1fr;
-    padding: 1em 0;
-    border-bottom: 1px solid rgba(0, 0, 0, .125);
-
-}
-
-.category-list-item {
-    display: flex;
-    max-width: 320px;
-}
-
-
-.form-control {
-    display: block;
-    width: 100%;
-    height: calc(2.25rem + 2px);
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: .25rem;
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-}
-
-.form-control:focus {
-    color: #495057;
-    background-color: #fff;
-    border-color: #80bdff;
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
 }
 
 .wrapper {
@@ -227,7 +164,7 @@ button#menuToggle:focus {
 }
 
 #CategoryName {
-    /*margin-left: 2.9em;*/
+    margin-left: 2.9em;
     padding: 1.3em 1.1em;
     text-align: left;
 }
@@ -239,6 +176,7 @@ button#menuToggle:focus {
 
 .create-form {
     display: flex;
+
 }
 
 .rotate {
@@ -248,16 +186,6 @@ button#menuToggle:focus {
 
 i {
     font-size: 1.5rem;
-}
-
-.hidden {
-    opacity: 0;
-    -webkit-transition: opacity 0.5s ease;
-    -moz-transition: opacity 0.5s ease;
-    -ms-transition: opacity 0.5s ease;
-    -o-transition: opacity 0.5s ease;
-    transition: opacity 0.5s ease;
-    transition-delay: 0.2s;
 }
 
 .container-fluid {
@@ -408,12 +336,12 @@ i {
 }
 
 .fas {
-    text-shadow: 2px 0px 2px gray;
+    text-shadow: 2px 0 2px gray;
     transition: text-shadow 700ms;
 }
 
 .fas:hover {
-    text-shadow: 2px 0px 2px black;
+    text-shadow: 2px 0 2px black;
 }
 
 td:first-child, th:first-child {

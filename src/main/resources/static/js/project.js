@@ -3,6 +3,17 @@ $(function () {
         toggleMenuIcon();
     });
 
+    // Hide create form by default
+    $(".create-form").hide();
+
+// Click plus button to show and hide form
+    $(".create-button").click(function () {
+        $(this).find("i").toggleClass("rotate");
+        $(this).toggleClass("button-click");
+        $(".create-form").fadeToggle(400);
+        $(".create-form input[type='text']").focus();
+    });
+
     // Ace Editor settings
     var editorHTML = ace.edit("editorHTML", {
         theme: "ace/theme/chrome",
@@ -45,36 +56,26 @@ $(function () {
     editorCode.renderer.setScrollMargin(10, 10, 10, 10);
 
     // Editor event listeners
-    editorHTML.on("change", function() {
+    editorHTML.on("change", function () {
         $("#html").val(editorHTML.getValue());
     });
 
-    editorCSS.on("change", function() {
+    editorCSS.on("change", function () {
         $("#css").val(editorCSS.getValue());
     });
 
-    editorJS.on("change", function() {
+    editorJS.on("change", function () {
         $("#js").val(editorJS.getValue());
     });
 
-    editorCode.on("change", function() {
+    editorCode.on("change", function () {
         $("#code").val(editorCode.getValue());
     });
 
-    $("#syntaxLanguage").on("change", function(e) {
+    $("#syntaxLanguage").on("change", function (e) {
         e.preventDefault();
         let mode = $("#syntaxLanguage").val();
         editorCode.session.setMode("ace/mode/" + mode)
-    });
-
-    // Hide create form by default
-
-    // Click plus button to show and hide form
-    $(".create-button").click(function () {
-        $(this).find("i").toggleClass("rotate");
-        $(this).toggleClass("button-click");
-        $(".list-detail").toggleClass("appear");
-        $(".create-form input[type='text']").focus();
     });
 
     // Used for material design form inputs
@@ -104,7 +105,7 @@ $(function () {
 });
 
 function toggleMenuIcon() {
-    $("#menuToggleWrapper").toggleClass("showToggleWrapper");
+    $("#menuToggleWrapper").toggleClass("ml-0");
     $("#sidebar-collapses").toggleClass("hiddenLeft");
     $("#pageContent").toggleClass("margin50");
 }

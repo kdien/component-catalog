@@ -16,7 +16,7 @@
     <!--</li>-->
     <!--</ul>-->
     <table class="table w-100 table-hover">
-        <thead class="thead-dark">
+        <thead class="thead-light">
         <tr>
             <th class="w-75">Name</th>
             <th></th>
@@ -25,20 +25,27 @@
         <tbody>
         <tr data-th-each="language : ${languages}">
             <td data-th-text="${language.name}"></td>
-            <td class="text-center">
+            <td class="text-right pr-5">
                 <a title="Edit" class="px-2" data-th-href="'/language/edit/' + ${language.getLangId()}"><i
                         class="fas fa-edit text-warning"></i></a>
                 <a title="Delete" class="px-2" data-th-href="'/language/delete/' + ${language.getLangId()}"><i
                         class="fas fa-trash-alt text-danger"></i></a>
             </td>
         </tr>
+
         <tr id="hoverNone">
-            <td></td>
-            <td>
-                <p class="mb-3 m-auto text-center">
-                    <a class="btn btn-primary px2" title="Add Language" href="/language/create"><i
-                            class="fas fa-plus"></i> Add Language</a>
-                </p>
+            <td colspan="2" class="pr-5">
+                <div class="list-button">
+                    <button type="button" class="btn btn-primary create-button">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <form class="create-form" action="#" method="post" data-th-action="@{/language/create}" data-th-object="${language}">
+                    <input type="text" class="mr-2" data-th-field="*{name}">
+                    <button type="submit" class="btn btn-success">
+                        <i class="fas fa-check"></i>
+                    </button>
+                </form>
             </td>
         </tr>
         </tbody>
@@ -47,3 +54,35 @@
 
 <!--footer content-->
 <div data-th-replace="~{fragments/footer :: footer}"></div>
+
+<!--<li class="category-list-item">-->
+<!--    <div class="list-button">-->
+<!--        <button type="button" class="btn btn-primary create-button">-->
+<!--            <i class="fas fa-plus"></i>-->
+<!--        </button>-->
+<!--    </div>-->
+<!--    <div class="list-detail">-->
+<!--        <form class="create-form" action="/component/" method="post">-->
+
+<!--            <div class="form-input-box">-->
+<!--                <input class="form-control border-0 input-boxshadow" type="text" data-val="true"-->
+<!--                       data-val-length="Category name cannot be longer than 50 characters."-->
+<!--                       data-val-length-max="50" data-val-required="Category name cannot be empty"-->
+<!--                       id="CategoryName" maxlength="50" name="CategoryName" value="">-->
+<!--                <span data-valmsg-replace="true" class="text-danger field-validation-valid"-->
+<!--                      data-valmsg-for="CategoryName" value="This category already exists"></span>-->
+
+<!--            </div>-->
+
+<!--            <div class="form-input-button">-->
+<!--                <button type="submit" class="btn btn-success">-->
+<!--                    <i class="fas fa-check"></i>-->
+<!--                </button>-->
+<!--            </div>-->
+<!--            <input type="hidden" value="2" data-val="true"-->
+<!--                   data-val-required="The UserID field is required." id="UserID" name="UserID">-->
+<!--            <input name="__RequestVerificationToken" type="hidden"-->
+<!--                   value="CfDJ8BNuMcorNAVPhe40goMcsiUUuWWsAeeFJ0DrrV1zVQcS__NS9xVWFiB1uKEvAHBOM3bkdcZPXNKp-dZ75U6zSFMK_9OFzFTZAtpc0syi-lsRz5TANDERaco0cC3UzzO_U8nnXJeASnzEmXH2ZtYO1cq-rtKoztTr53tkgZcYyCx5jQrRqz9xrCP4kRKXrmvs7A">-->
+<!--        </form>-->
+<!--    </div>-->
+<!--</li>-->

@@ -26,7 +26,8 @@ public class LanguageController {
     }
 
     @GetMapping
-    public String listAllLanguages() {
+    public String listAllLanguages(Model model) {
+        model.addAttribute("language", new Language());
         return "language/index";
     }
 
