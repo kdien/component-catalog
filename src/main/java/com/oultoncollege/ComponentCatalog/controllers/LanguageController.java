@@ -70,7 +70,7 @@ public class LanguageController {
     }
 
     @PostMapping("/delete/{id}")
-    public String deleteLanguageSubmit(@PathVariable("id") int id, BindingResult result, Model model) {
+    public String deleteLanguageSubmit(@PathVariable("id") int id, Model model) {
         Language language = languageService.getLanguage(id);
         languageService.deleteLanguage(language);
         return "redirect:/language/";

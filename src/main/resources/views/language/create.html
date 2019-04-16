@@ -6,7 +6,7 @@
 <div class="col-12" id="successBox">
     <h1>Create New Language</h1>
     <form action="#" method="post" data-th-action="@{/language/create}" data-th-object="${language}">
-        Name: <input type="text" class="mr-2" data-th-field="*{name}">
+        Name: <input type="text" class="mr-2" data-th-field="*{name}" autofocus>
         <button type="submit" class="btn btn-success">
             <i class="fas fa-plus"></i>
         </button>

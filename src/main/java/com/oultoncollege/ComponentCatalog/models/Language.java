@@ -17,7 +17,7 @@ public class Language implements Serializable {
     @NotBlank
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "language")
+    @OneToMany(orphanRemoval = true, fetch = FetchType.EAGER, mappedBy = "language")
     private List<Component> components;
 
     public Integer getLangId() {

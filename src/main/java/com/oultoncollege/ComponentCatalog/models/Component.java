@@ -10,8 +10,8 @@ import java.util.List;
 public class Component implements Serializable {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name = "component_id")
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
 
     @NotBlank

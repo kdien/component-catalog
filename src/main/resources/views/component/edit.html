@@ -6,7 +6,7 @@
 <div class="container" id="component">
     <h1 class="text-center">Create New Component:</h1>
 
-    <form action="#" data-th-action="@{/component/create}" data-th-object="${component}" method="post"
+    <form action="#" data-th-action="'/component/edit/' + ${component.id}" data-th-object="${component}" method="post"
           onSubmit="">
 
         <div class="form-field input-wrapper">
@@ -35,17 +35,17 @@
 
         <div class="input-wrapper">
             <label for="editorHTML">HTML:</label>
-            <div id="editorHTML"></div>
+            <div id="editorHTML" data-th-text="${component.html}"></div>
         </div>
 
         <div class="input-wrapper">
             <label for="editorCSS">CSS:</label>
-            <div id="editorCSS"></div>
+            <div id="editorCSS" data-th-text="${component.css}"></div>
         </div>
 
         <div class="input-wrapper">
             <label for="editorHTML">JavaScript:</label>
-            <div id="editorJS"></div>
+            <div id="editorJS" data-th-text="${component.js}"></div>
         </div>
 
         <div class="input-wrapper">
@@ -57,7 +57,7 @@
                 <option value="jsx">JSX</option>
                 <option value="python">Python</option>
             </select>
-            <div data-th-field="*{code}" id="editorCode"></div>
+            <div id="editorCode" data-th-text="${component.code}" data-th-field="*{code}"></div>
         </div>
 
         <input type="hidden" data-th-field="*{html}" id="html">

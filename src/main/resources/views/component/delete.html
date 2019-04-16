@@ -1,0 +1,17 @@
+<!--header content-->
+<div data-th-replace="~{fragments/header :: header}"></div>
+<div data-th-replace="~{fragments/sidebar :: sidebar}"></div>
+
+<!--body content-->
+<div>
+    <h1>Delete Component</h1>
+    <p data-th-text="'Are you sure you want to delete ' + ${component.name} + '?'"></p>
+    <form action="#" method="post" data-th-action="'/component/delete/' + ${component.getId()}"
+          data-th-object="${component}">
+        <input type="submit" value="Delete" class="btn btn-danger mr-2">
+        <a class="btn btn-light" href="/component/">Cancel</a>
+    </form>
+</div>
+
+<!--footer content-->
+<div data-th-replace="~{fragments/footer :: footer}"></div>

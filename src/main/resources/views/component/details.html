@@ -3,66 +3,42 @@
 <div data-th-replace="~{fragments/sidebar :: sidebar}"></div>
 
 <!--body content-->
-<div id="component">
-    <h1>Create New Component:</h1>
+<div class="container" id="component">
+    <h1 class="text-center" data-th-text="${component.name}"></h1>
+    <h2 class="text-center" data-th-text="${component.language.name}"></h2>
 
-    <form action="#" data-th-action="@{/component/create}" data-th-object="${component}" method="post">
+    <iframe class="input-wrapper" src="javascript:' '">
+        <html>
+            <head></head>
+            <body>
 
-        <div class="form-field">
-            <div class="form-field-control">
-                <label for="name-field" class="form-field-label">Name:</label>
-                <input type="text" class="form-field-input" data-th-field="*{name}" id="name-field" />
-            </div>
-        </div>
+            </body>
+        </html>
+    </iframe>
 
-        <div class="form-field">
-            <div class="form-field-control">
-                <label for="desc-field" class="form-field-label">Description:</label>
-                <textarea type="text" class="form-field-textarea" data-th-field="*{description}" id="desc-field"></textarea>
-            </div>
-        </div>
+    <div class="input-wrapper">
+        <p data-th-text="${component.description}"></p>
+    </div>
 
-        <div class="form-field">
-            <div class="form-field-control">
-                <label for="html-field" class="form-field-label">HTML:</label>
-                <textarea type="text" class="form-field-textarea" data-th-field="*{html}" id="html-field"></textarea>
-            </div>
-        </div>
+    <div class="input-wrapper">
+        <label for="editorHTML">HTML:</label>
+        <div id="editorHTML" data-th-text="${component.html}"></div>
+    </div>
 
-        <div class="form-field">
-            <div class="form-field-control">
-                <label for="css-field" class="form-field-label">CSS:</label>
-                <textarea type="text" class="form-field-textarea" data-th-field="*{css}" id="css-field"></textarea>
-            </div>
-        </div>
+    <div class="input-wrapper">
+        <label for="editorCSS">CSS:</label>
+        <div id="editorCSS" data-th-text="${component.css}"></div>
+    </div>
 
-        <div class="form-field">
-            <div class="form-field-control">
-                <label for="js-field" class="form-field-label">JavaScript:</label>
-                <textarea type="text" class="form-field-textarea" data-th-field="*{js}" id="js-field"></textarea>
-            </div>
-        </div>
+    <div class="input-wrapper">
+        <label for="editorHTML">JavaScript:</label>
+        <div id="editorJS" data-th-text="${component.js}"></div>
+    </div>
 
-        <div class="form-field">
-            <div class="form-field-control">
-                <label for="code-field" class="form-field-label">Code:</label>
-                <textarea type="text" class="form-field-textarea" data-th-field="*{code}" id="code-field"></textarea>
-            </div>
-        </div>
-
-        <div class="form-field">
-            <div class="form-field-control">
-                <label for="lang-field" class="">Language:</label>
-                <select class="custom-select" data-th-field="*{language}" id="lang-field">
-                    <option data-th-each="language : ${languages}" data-th-text="${language.name}" data-th-value="${language.getLangId()}"></option>
-                </select>
-            </div>
-        </div>
-
-        <div>
-            <input class="btn model-submit" type="submit" value="Submit" />
-        </div>
-    </form>
+    <div class="input-wrapper">
+        <label for="editorCode">Custom Code:</label><br>
+        <div id="editorCode" data-th-text="${component.code}"></div>
+    </div>
 </div>
 
 <!--footer content-->

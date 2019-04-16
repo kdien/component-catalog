@@ -62,20 +62,30 @@ public class ComponentController {
         return "redirect:/component/";
     }
 
+    @GetMapping("/{id}")
+    public String componentDetail(@PathVariable("id") int id, Model model) {
+        Component component = compService.getComponent(id);
+
+        if (component != null)
+            model.addAttribute("component", component);
+
+        return "/component/details";
+    }
+
     @GetMapping("/delete/{id}")
     public String deleteComponentForm(@PathVariable("id") int id, Model model) {
         Component component = compService.getComponent(id);
 
         if (component != null)
-            model.addAttribute("language", component);
+            model.addAttribute("component", component);
 
         return "/component/delete";
     }
 
     @PostMapping("/delete/{id}")
-    public String deleteComponentSubmit(@PathVariable("id") int id, BindingResult result, Model model) {
-        Component component = compService.getComponent(id);
-        compService.deleteComponent(component);
+    public String deleteComponentSubmit(@PathVariable("id") int id, Model model) {
+//        Component component = compService.getComponent(id);
+        compService.deleteComponent(id);
         return "redirect:/component/";
     }
 }

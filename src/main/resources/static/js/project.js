@@ -61,6 +61,12 @@ $(function () {
         $("#code").val(editorCode.getValue());
     });
 
+    $("#syntaxLanguage").on("change", function(e) {
+        e.preventDefault();
+        let mode = $("#syntaxLanguage").val();
+        editorCode.session.setMode("ace/mode/" + mode)
+    });
+
     // Hide create form by default
 
     // Click plus button to show and hide form
