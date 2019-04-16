@@ -7,14 +7,23 @@
     <h1 class="text-center" data-th-text="${component.name}"></h1>
     <h2 class="text-center" data-th-text="${component.language.name}"></h2>
 
-    <iframe class="input-wrapper" src="javascript:' '">
-        <html>
-            <head></head>
-            <body>
-
-            </body>
-        </html>
-    </iframe>
+    <div class="input-wrapper">
+        <iframe data-th-srcdoc="
+            '<html>
+                <head>
+                    <style>' +
+                        ${component.css} +
+                    '</style>
+                </head>
+                <body>' +
+                    ${component.html} +
+                    '<script>' +
+                        ${component.js} +
+                    '</script>
+                </body>
+            </html>'">
+        </iframe>
+    </div>
 
     <div class="input-wrapper">
         <p data-th-text="${component.description}"></p>

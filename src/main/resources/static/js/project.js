@@ -15,61 +15,31 @@ $(function () {
     });
 
     // Ace Editor settings
-    var editorHTML = ace.edit("editorHTML", {
-        theme: "ace/theme/chrome",
-        mode: "ace/mode/html",
-        fontSize: "14pt",
-        minLines: 2,
-        maxLines: 40,
-        autoScrollEditorIntoView: true
-    });
-    editorHTML.renderer.setScrollMargin(10, 10, 10, 10);
+    let editorHTML = ace.edit("editorHTML");
+    let editorCSS = ace.edit("editorCSS");
+    let editorJS = ace.edit("editorJS");
+    let editorCode = ace.edit("editorCode");
 
-    var editorCSS = ace.edit("editorCSS", {
-        theme: "ace/theme/chrome",
-        mode: "ace/mode/css",
-        fontSize: "14pt",
-        minLines: 2,
-        maxLines: 40,
-        autoScrollEditorIntoView: true
-    });
-    editorCSS.renderer.setScrollMargin(10, 10, 10, 10);
+    let editorArray = [editorHTML, editorCSS, editorJS, editorCode];
+    let modeArray = ["html", "css", "javascript", "java"];
+    let nameArray = ["html", "css", "js", "code"];
 
-    var editorJS = ace.edit("editorJS", {
-        theme: "ace/theme/chrome",
-        mode: "ace/mode/javascript",
-        fontSize: "14pt",
-        minLines: 2,
-        maxLines: 40,
-        autoScrollEditorIntoView: true
-    });
-    editorJS.renderer.setScrollMargin(10, 10, 10, 10);
+    editorArray.forEach(editor => {
+        editor.setOptions({
+            theme: "ace/theme/chrome",
+            mode: "ace/mode/" + modeArray[editorArray.indexOf(editor)],
+            fontSize: "14pt",
+            minLines: 2,
+            maxLines: 40,
+            useSoftTabs: true,
+            autoScrollEditorIntoView: true
+        });
+        editor.renderer.setScrollMargin(10, 10, 10, 10);
 
-    var editorCode = ace.edit("editorCode", {
-        theme: "ace/theme/chrome",
-        mode: "ace/mode/java",
-        fontSize: "14pt",
-        minLines: 2,
-        maxLines: 40,
-        autoScrollEditorIntoView: true
-    });
-    editorCode.renderer.setScrollMargin(10, 10, 10, 10);
-
-    // Editor event listeners
-    editorHTML.on("change", function () {
-        $("#html").val(editorHTML.getValue());
-    });
-
-    editorCSS.on("change", function () {
-        $("#css").val(editorCSS.getValue());
-    });
-
-    editorJS.on("change", function () {
-        $("#js").val(editorJS.getValue());
-    });
-
-    editorCode.on("change", function () {
-        $("#code").val(editorCode.getValue());
+        // Adds event listeners to each editor
+        editor.on("change", evt => {
+            $("#" + nameArray[editorArray.indexOf(editor)]).val(editor.getValue());
+        });
     });
 
     $("#syntaxLanguage").on("change", function (e) {

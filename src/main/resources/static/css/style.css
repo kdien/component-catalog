@@ -308,6 +308,11 @@ i {
     width: 80%;
 }
 
+.input-wrapper > iframe {
+    width: 100%;
+    border: none;
+}
+
 @media only screen and (max-width: 800px) {
     #menuCollapse {
         display: block !important;
