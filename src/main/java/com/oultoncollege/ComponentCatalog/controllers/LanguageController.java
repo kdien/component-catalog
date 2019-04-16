@@ -39,6 +39,7 @@ public class LanguageController {
 
     @PostMapping("/create")
     public String createLanguageSubmit(@Valid Language language, BindingResult result, Model model) {
+        language.setName(language.getName().trim());
         languageService.createLanguage(language);
         return "redirect:/language/";
     }
@@ -56,6 +57,7 @@ public class LanguageController {
     @PostMapping("/edit/{id}")
     public String editLanguageSubmit(@PathVariable("id") int id, @Valid Language language, BindingResult result, Model model) {
         language.setLangId(id);
+        language.setName(language.getName().trim());
         languageService.editLanguage(language);
         return "redirect:/language/";
     }

@@ -41,6 +41,8 @@ public class ComponentController {
 
     @PostMapping("/create")
     public String createComponentSubmit(@ModelAttribute Component component) {
+        component.setName(component.getName().trim());
+        component.setDescription(component.getDescription().trim());
         compService.createComponent(component);
         return "redirect:/component/";
     }
@@ -58,6 +60,8 @@ public class ComponentController {
     @PostMapping("/edit/{id}")
     public String editComponentSubmit(@PathVariable("id") int id, @Valid Component component, BindingResult result, Model model) {
         component.setId(id);
+        component.setName(component.getName().trim());
+        component.setDescription(component.getDescription().trim());
         compService.editComponent(component);
         return "redirect:/component/";
     }
