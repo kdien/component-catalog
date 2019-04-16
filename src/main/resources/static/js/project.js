@@ -38,7 +38,9 @@ $(function () {
 
         // Adds event listeners to each editor
         editor.on("change", evt => {
-            $("#" + nameArray[editorArray.indexOf(editor)]).val(editor.getValue());
+            $("#" + nameArray[editorArray.indexOf(editor)])
+                .val(editorArray[editorArray.indexOf(editor)].getValue());
+            updatePreview(editorArray);
         });
     });
 
@@ -78,4 +80,25 @@ function toggleMenuIcon() {
     $("#menuToggleWrapper").toggleClass("ml-0");
     $("#sidebar-collapses").toggleClass("hiddenLeft");
     $("#pageContent").toggleClass("margin50");
+}
+
+function updatePreview(editorArray) {
+    $("#previewWindow").attr("srcdoc", "" +
+        "<html>" +
+            "<head>" +
+                "<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'" +
+                      "integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T'" +
+                      "crossorigin='anonymous'>" +
+                "<style>" +
+                    "body{background-color: transparent !important}" +
+                    editorArray[1].getValue() +
+                "</style>" +
+            "</head>" +
+            "<body>" +
+                    editorArray[0].getValue() +
+                "<script>" +
+                    editorArray[2].getValue() +
+                "</script>" +
+            "</body>" +
+        "</html>");
 }
