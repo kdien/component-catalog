@@ -20,6 +20,13 @@ public class Language implements Serializable {
     @OneToMany(orphanRemoval = true, fetch = FetchType.EAGER, mappedBy = "language")
     private List<Component> components;
 
+    public Language() {}
+
+    public Language(Integer id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     public Integer getLangId() {
         return id;
     }

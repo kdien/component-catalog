@@ -35,6 +35,19 @@ public class Component implements Serializable {
     @ManyToMany
     private List<Customization> customizations;
 
+    public Component() {}
+
+    public Component(Integer id, String name, String description, String html, String css, String js, String code, Language language) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.html = html;
+        this.css = css;
+        this.js = js;
+        this.code = code;
+        this.language = language;
+    }
+
     // GETTERS AND SETTERS
     public Integer getId() {
         return id;
