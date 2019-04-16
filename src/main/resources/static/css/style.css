@@ -58,10 +58,6 @@ body, html {
     background: none;
 }
 
-#sidebar ul.components {
-    padding: 20px 0;
-}
-
 #sidebar ul p {
     color: #fff;
     padding: 10px;
@@ -75,6 +71,9 @@ body, html {
 
 .mr-2, .mx-2{
     margin-left: 3.4em;
+    /*width: 100%;*/
+}
+#buttonLength{
     width: 100%;
 }
 
