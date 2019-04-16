@@ -23,7 +23,7 @@
                            data-toggle="collapse" aria-expanded="false"></a>
                         <ul class="collapse list-unstyled" data-th-id="${language.name}">
                             <li data-th-each="component : ${language.getComponents()}">
-                                <a href="#" data-th-text="${component.name}"></a>
+                                <a data-th-href="'/component/' + ${component.id}" data-th-text="${component.name}"></a>
                             </li>
                         </ul>
                     </li>
