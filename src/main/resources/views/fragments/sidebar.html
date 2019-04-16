@@ -2,30 +2,33 @@
 
     <div class="collapse show" id="sidebar-collapses">
         <!-- Sidebar -->
-        <aside class="h-100" id="sidebar">
-            <div class="d-flex">
-                <button class="btn p-0 w-100 text-right h-25" id="menuClose">
-                    <i class="fas fa-times text-white p-0 mr-4"></i>
-                </button>
-            </div>
-            <div id="searchBar" class="p-4">
-                <form class="form-inline">
-                    <input class="form-control w-100 mr-sm-2 p-2 rounded-0" type="text" placeholder="Search"
-                           aria-label="Search">
-                </form>
-            </div>
+        <aside class="h-100 pt-3" id="sidebar">
 
-            <ul class="list-unstyled components">
-                <li class="active" data-th-each="language : ${languages}">
-                    <a data-th-href="'#' + ${language.name}" data-th-text="${language.name}" class="dropdown-toggle"
-                       data-toggle="collapse" aria-expanded="false"></a>
-                    <ul class="collapse list-unstyled" data-th-id="${language.name}">
-                        <li data-th-each="component : ${language.getComponents()}">
-                            <a href="#" data-th-text="${component.name}"></a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+            <div class="sidebar-components">
+                <div class="d-flex">
+                    <button class="btn p-0 w-100 text-right h-25" id="menuClose">
+                        <i class="fas fa-times text-white p-0 mr-4"></i>
+                    </button>
+                </div>
+                <div id="searchBar" class="p-4">
+                    <form class="form-inline">
+                        <input class="form-control w-100 mr-sm-2 p-2 rounded-0" type="text" placeholder="Search"
+                               aria-label="Search">
+                    </form>
+                </div>
+
+                <ul class="list-unstyled components">
+                    <li class="active" data-th-each="language : ${languages}">
+                        <a data-th-href="'#' + ${language.name}" data-th-text="${language.name}" class="dropdown-toggle"
+                           data-toggle="collapse" aria-expanded="false"></a>
+                        <ul class="collapse list-unstyled" data-th-id="${language.name}">
+                            <li data-th-each="component : ${language.getComponents()}">
+                                <a href="#" data-th-text="${component.name}"></a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </aside>
 
         <!--End of sidebar-->
@@ -35,5 +38,5 @@
             <i class="fas fa-angle-right text-white p-1"></i>
         </button>
     </div>
-    <main class="overflow-auto w-100" id="pageContent">
+    <main id="pageContent">
 </th:block>

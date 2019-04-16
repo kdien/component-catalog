@@ -5,10 +5,19 @@
     padding: 0;
 }
 
-body, html {
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
-    height: 100%;
+}
+
+#content, main {
+    flex: 1 0 auto;
 }
 
 #sidebar {
@@ -16,8 +25,8 @@ body, html {
     color: #fff;
     transition: all 0.3s;
     min-width: 320px;
-
     max-width: 320px;
+    overflow-y: visible;
 }
 
 #sidebar.active {
@@ -40,9 +49,12 @@ body, html {
 
 #sidebar-collapses {
     transition: all 1s;
-    overflow-y: auto;
-    overflow-x: hidden;
     min-width: 320px;
+}
+
+.sidebar-components {
+    position: sticky;
+    top: 1rem;
 }
 
 #sidebar .sidebar-header {
@@ -116,7 +128,7 @@ body, html {
      padding-top: 42vh;
      padding-right: 5px;
      position: absolute;
-     height: 85vh;
+     height: 100%;
      width: 55px;
      margin-left: -50px;
      transition: margin-left 2000ms ease;
@@ -132,10 +144,6 @@ button#menuToggle i {
 
 button#menuToggle:focus {
     box-shadow: none;
-}
-
-#main {
-    height: 85vh;
 }
 
 #pageContent {
@@ -159,12 +167,6 @@ button#menuToggle:focus {
     margin-bottom: 3.5em;
 }
 
-#CategoryName {
-    margin-left: 2.9em;
-    padding: 1.3em 1.1em;
-    text-align: left;
-}
-
 .list-button {
     height: 0;
     z-index: 1;
@@ -172,7 +174,6 @@ button#menuToggle:focus {
 
 .create-form {
     display: flex;
-
 }
 
 .rotate {
@@ -182,6 +183,10 @@ button#menuToggle:focus {
 
 i {
     font-size: 1.5rem;
+}
+
+.alert {
+    padding: .65rem .25rem !important;
 }
 
 .container-fluid {
@@ -233,10 +238,6 @@ i {
     transition: all 0.4s;
     width: 100%;
     cursor: text;
-}
-
-.alert {
-    padding: .65rem .25rem !important;
 }
 
 .form-field-control {
@@ -309,20 +310,6 @@ i {
     border: none;
 }
 
-@media only screen and (max-width: 800px) {
-    #menuCollapse {
-        display: block !important;
-    }
-
-    .navbar {
-        height: unset;
-    }
-
-    .flex {
-        display: flex;
-    }
-}
-
 .hiddenLeft {
     margin-left: -320px;
 }
@@ -330,10 +317,6 @@ i {
 .category-list-item {
     position: absolute;
     bottom: 7vh;
-}
-
-#footer {
-    height: 7vh;
 }
 
 .fas {
@@ -347,4 +330,19 @@ i {
 
 td:first-child, th:first-child {
     padding-left: 2em;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 800px) {
+    #menuCollapse {
+        display: block !important;
+    }
+
+    .flex {
+        display: flex;
+    }
 }
