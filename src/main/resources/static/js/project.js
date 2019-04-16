@@ -1,8 +1,5 @@
 $(function () {
-    $("#menuClose").on("click", function () {
-        toggleMenuIcon();
-    });
-    $("#menuOpen").on("click", function () {
+    $("#menuOpen, #menuClose").on("click", function () {
         toggleMenuIcon();
     });
 
