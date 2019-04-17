@@ -49,7 +49,14 @@
     </div>
 
     <div class="input-wrapper">
-        <label for="editorCode">Custom Code:</label><br>
+        <label for="syntaxLanguage">Custom Syntax:</label><br>
+        <select class="custom-select" id="syntaxLanguage">
+            <option value="csharp">C#</option>
+            <option value="java">Java</option>
+            <option value="jsp">JSP</option>
+            <option value="jsx">JSX</option>
+            <option value="python">Python</option>
+        </select>
         <div id="editorCode" data-th-text="${component.code}"></div>
     </div>
 </div>
