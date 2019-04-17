@@ -19,6 +19,8 @@
             <td data-th-text="${component.description}"></td>
             <td data-th-text="${component.getLanguage().getName()}"></td>
             <td class="text-center">
+                <a title="Details" class="px-2" data-th-href="'/component/' + ${component.getId()}"><i
+                        class="fas fa-info-circle text-info"></i></a>
                 <a title="Edit" class="px-2" data-th-href="'/component/edit/' + ${component.getId()}"><i
                         class="fas fa-edit text-warning"></i></a>
                 <a title="Delete" class="px-2" data-th-href="'/component/delete/' + ${component.getId()}"><i
