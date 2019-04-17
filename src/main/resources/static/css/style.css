@@ -16,6 +16,10 @@ body {
     background: #fafafa;
 }
 
+nav {
+    z-index: 1;
+}
+
 #content, main {
     flex: 1 0 auto;
 }
@@ -54,6 +58,7 @@ body {
 #sidebar-collapses {
     transition: all 1s;
     min-width: 320px;
+    z-index: 1;
 }
 
 .sidebar-components {
@@ -130,13 +135,11 @@ body {
 
 #menuToggleWrapper {
      background: #4e5369;
-     /*padding-top: 42vh;*/
-     /*padding-right: 5px;*/
-     position: absolute;
-     /*height: 100%;*/
-     width: 55px;
-     margin-left: -50px;
-     transition: margin-left 2000ms ease;
+     position: sticky;
+     top: 0;
+     height: 100vh;
+     z-index: 0;
+     transition: margin-left 1500ms ease;
  }
 
 button#menuToggle {
@@ -151,12 +154,18 @@ button#menuToggle:focus {
     box-shadow: none;
 }
 
+#menuOpen {
+    margin-top: 50vh;
+    margin-bottom: 50vh;
+}
+
 #pageContent {
+    margin-left: 275px;
     transition: margin-left 1s;
 }
 
-.margin50 {
-    margin-left: 50px;
+.reverseMargin {
+    margin-left: 0 !important;
 }
 
 [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
@@ -315,7 +324,7 @@ i {
     border: none;
 }
 
-.hiddenLeft {
+.hiddenSideMenu {
     margin-left: -320px;
 }
 
@@ -339,6 +348,7 @@ td:first-child, th:first-child {
 
 footer {
     flex-shrink: 0;
+    z-index: 1;
 }
 
 /* Media Queries */

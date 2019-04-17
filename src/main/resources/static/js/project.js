@@ -78,8 +78,8 @@ $(function () {
 
 function toggleMenuIcon() {
     $("#menuToggleWrapper").toggleClass("ml-0");
-    $("#sidebar-collapses").toggleClass("hiddenLeft");
-    $("#pageContent").toggleClass("margin50");
+    $("#sidebar-collapses").toggleClass("hiddenSideMenu");
+    $("#pageContent").toggleClass("reverseMargin");
 }
 
 function updatePreview(editorArray) {

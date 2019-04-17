@@ -2,24 +2,26 @@
 
     <div class="collapse show" id="sidebar-collapses">
         <!-- Sidebar -->
-        <aside class="h-100 pt-3" id="sidebar">
+        <aside class="h-100 pt-2" id="sidebar">
 
             <div class="sidebar-components">
-                <div class="d-flex">
-                    <button class="btn p-0 w-100 text-right h-25" id="menuClose">
-                        <i class="fas fa-times text-white p-0 mr-4"></i>
-                    </button>
-                </div>
-                <div id="searchBar" class="p-4">
-                    <form class="form-inline">
-                        <input class="form-control w-100 mr-sm-2 p-2 rounded-0" type="text" placeholder="Search"
-                               aria-label="Search">
-                    </form>
+                <div id="sidebar-top" class="d-flex">
+                    <div id="searchBar" class="flex-grow-4 pl-4">
+                        <form class="form-inline">
+                            <input class="form-control w-100 mr-sm-2 p-2 rounded-0" type="text" placeholder="Search"
+                                   aria-label="Search">
+                        </form>
+                    </div>
+                    <div class="flex-grow-1">
+                        <button class="btn text-right py-1 pl-4 pr-3" id="menuClose">
+                            <i class="fas fa-times fa-2x text-white"></i>
+                        </button>
+                    </div>
                 </div>
 
                 <ul class="list-unstyled components">
                     <li class="active" data-th-each="language : ${languages}">
-                        <a data-th-href="'#lang' + ${language.getLangId()}" data-th-text="${language.name}" class="dropdown-toggle"
+                        <a data-th-href="'#lang' + ${language.getLangId()}" data-th-text="${language.name}" class="dropdown-toggle pl-4"
                            data-toggle="collapse" aria-expanded="false"></a>
                         <ul class="collapse list-unstyled" data-th-id="'lang' + ${language.getLangId()}">
                             <li data-th-each="component : ${language.getComponents()}">
@@ -33,7 +35,7 @@
 
         <!--End of sidebar-->
     </div>
-    <div id="menuToggleWrapper">
+    <div id="menuToggleWrapper" class="hiddenSideMenu">
         <button class="btn" id="menuOpen">
             <i class="fas fa-angle-right text-white p-1"></i>
         </button>
