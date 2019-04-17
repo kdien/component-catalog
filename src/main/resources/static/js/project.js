@@ -84,7 +84,7 @@ $(function () {
     [].forEach.call(
         document.querySelectorAll('.form-field-input, .form-field-textarea'),
         (el) => {
-            if(el.value != null) {
+            if(el.value != "") {
                 setActive(el, true)
             }
             el.onblur = () => {
