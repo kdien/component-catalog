@@ -19,14 +19,14 @@ import java.util.List;
 public class ApiController {
 
     @GetMapping(value = "/api/component", produces = "application/json")
-    public String getAllComponentsJson(@RequestParam(required = false) @Nullable String searchTerm) {
+    public String getAllComponentsJson(@RequestParam(required = false) @Nullable String searchName) {
         StringBuilder sb = new StringBuilder();
         sb.append("{ \"components\":[");
 
-        if (searchTerm == null)
-            searchTerm = "";
+        if (searchName == null)
+            searchName = "";
 
-        List<Component> components = getComponentsWithSearch(searchTerm);
+        List<Component> components = getComponentsWithSearch(searchName);
 
         if (components.size() > 0) {
             for (Component component : components) {
@@ -44,7 +44,7 @@ public class ApiController {
         return sb.toString();
     }
 
-    private List<Component> getComponentsWithSearch(String searchTerm) {
+    private List<Component> getComponentsWithSearch(String searchName) {
         List<Component> components = new ArrayList<>();
         Connection connection = JdbcConnection.getJdbcConnection();
 
@@ -63,7 +63,7 @@ public class ApiController {
 
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
-            stmt.setString(1, "%" + searchTerm + "%");
+            stmt.setString(1, "%" + searchName.trim() + "%");
             ResultSet resultSet = stmt.executeQuery();
 
             while (resultSet.next()) {
