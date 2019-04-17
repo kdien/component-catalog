@@ -19,9 +19,9 @@
 
                 <ul class="list-unstyled components">
                     <li class="active" data-th-each="language : ${languages}">
-                        <a data-th-href="'#' + ${language.name}" data-th-text="${language.name}" class="dropdown-toggle"
+                        <a data-th-href="'#lang' + ${language.getLangId()}" data-th-text="${language.name}" class="dropdown-toggle"
                            data-toggle="collapse" aria-expanded="false"></a>
-                        <ul class="collapse list-unstyled" data-th-id="${language.name}">
+                        <ul class="collapse list-unstyled" data-th-id="'lang' + ${language.getLangId()}">
                             <li data-th-each="component : ${language.getComponents()}">
                                 <a data-th-href="'/component/' + ${component.id}" data-th-text="${component.name}"></a>
                             </li>
