@@ -3,10 +3,27 @@ $(function () {
         toggleMenuIcon();
     });
 
+    // Search bar AJAX call
+    $("#searchBar input").autocomplete({
+        source: function (request, response) {
+            $.getJSON("/api/component", request, function (data) {
+                response($.map(data.components, function (item) {
+                    return {
+                        label: item.name,
+                        value: item.name + ""
+                    }
+                }))
+            })
+        },
+        select: function () {
+            $(this).parents("form").submit();
+        }
+    });
+
     // Hide create form by default
     $(".create-form").hide();
 
-// Click plus button to show and hide form
+    // Click plus button to show and hide form
     $(".create-button").click(function () {
         $(this).find("i").toggleClass("rotate");
         $(this).toggleClass("button-click");
@@ -86,8 +103,8 @@ function updatePreview(editorArray) {
     $("#previewWindow").attr("srcdoc", "" +
         "<html>" +
             "<head>" +
-                "<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'" +
-                      "integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T'" +
+                "<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' " +
+                      "integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' " +
                       "crossorigin='anonymous'>" +
                 "<style>" +
                     "body{background-color: transparent !important}" +

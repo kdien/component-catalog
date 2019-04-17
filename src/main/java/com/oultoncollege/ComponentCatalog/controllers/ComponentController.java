@@ -13,6 +13,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @RequestMapping("/component/*")
@@ -30,6 +31,40 @@ public class ComponentController {
     public String listAllComponents(Model model) {
         model.addAttribute("components", compService.getAllComponents());
         return "component/index";
+    }
+
+    /**
+     * TODO: this may have poor performance with a large dataset
+     *      could look into filtering data at DB layer
+     */
+    @GetMapping("/get")
+    public String getComponentByName(@RequestParam String name, Model model) {
+        Component matchedComponent = null;
+        List<Component> components = compService.getAllComponents();
+
+        for (Component component : components) {
+            if (component.getName().equalsIgnoreCase(name.trim())) {
+                matchedComponent = component;
+                break;
+            }
+        }
+
+        if (matchedComponent != null) {
+            model.addAttribute("component", matchedComponent);
+            return "/component/details";
+        }
+
+        return "redirect:/component/";
+    }
+
+    @GetMapping("/{id}")
+    public String getComponentById(@PathVariable("id") int id, Model model) {
+        Component component = compService.getComponent(id);
+
+        if (component != null)
+            model.addAttribute("component", component);
+
+        return "/component/details";
     }
 
     @GetMapping("/create")
@@ -64,16 +99,6 @@ public class ComponentController {
         component.setDescription(component.getDescription().trim());
         compService.editComponent(component);
         return "redirect:/component/";
-    }
-
-    @GetMapping("/{id}")
-    public String componentDetail(@PathVariable("id") int id, Model model) {
-        Component component = compService.getComponent(id);
-
-        if (component != null)
-            model.addAttribute("component", component);
-
-        return "/component/details";
     }
 
     @GetMapping("/delete/{id}")
