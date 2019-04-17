@@ -16,10 +16,6 @@ body {
     background: #fafafa;
 }
 
-nav {
-    z-index: 1;
-}
-
 #content, main {
     flex: 1 0 auto;
 }
@@ -138,7 +134,6 @@ nav {
      position: sticky;
      top: 0;
      height: 100vh;
-     z-index: 0;
      transition: margin-left 2000ms ease;
  }
 
@@ -348,7 +343,6 @@ td:first-child, th:first-child {
 
 footer {
     flex-shrink: 0;
-    z-index: 1;
 }
 
 /* Media Queries */
