@@ -7,6 +7,8 @@ import com.oultoncollege.ComponentCatalog.services.ComponentService;
 import com.oultoncollege.ComponentCatalog.services.ComponentServiceImpl;
 import com.oultoncollege.ComponentCatalog.services.LanguageService;
 import com.oultoncollege.ComponentCatalog.services.LanguageServiceImpl;
+import com.oultoncollege.ComponentCatalog.utils.JdbcQuery;
+import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -28,33 +30,10 @@ public class ComponentController {
     }
 
     @GetMapping
-    public String listAllComponents(Model model) {
-        model.addAttribute("components", compService.getAllComponents());
+    public String listAllComponents(Model model, @RequestParam(required = false) @Nullable String name) {
+        List<Component> components = (name == null) ? compService.getAllComponents() : JdbcQuery.getComponentsWithSearch(name);
+        model.addAttribute("components", components);
         return "component/index";
-    }
-
-    /**
-     * TODO: this may have poor performance with a large dataset
-     *      could look into filtering data at DB layer
-     */
-    @GetMapping("/get")
-    public String getComponentByName(@RequestParam String name, Model model) {
-        Component matchedComponent = null;
-        List<Component> components = compService.getAllComponents();
-
-        for (Component component : components) {
-            if (component.getName().equalsIgnoreCase(name.trim())) {
-                matchedComponent = component;
-                break;
-            }
-        }
-
-        if (matchedComponent != null) {
-            model.addAttribute("component", matchedComponent);
-            return "/component/details";
-        }
-
-        return "redirect:/component/";
     }
 
     @GetMapping("/{id}")

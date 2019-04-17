@@ -10,14 +10,14 @@ $(function () {
                 response($.map(data.components, function (item) {
                     return {
                         label: item.name,
-                        value: item.name + ""
+                        value: item.name + "",
+                        id: item.id
                     }
                 }))
             })
         },
         select: function (event, ui) {
-            $(this).val(ui.item.value);
-            $(this).parents("form").submit();
+            window.location.href = "/component/" + ui.item.id;
         }
     });
 
