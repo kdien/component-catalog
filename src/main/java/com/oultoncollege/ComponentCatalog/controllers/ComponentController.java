@@ -32,6 +32,18 @@ public class ComponentController {
     @GetMapping
     public String listAllComponents(Model model, @RequestParam(required = false) @Nullable String name) {
         List<Component> components = (name == null) ? compService.getAllComponents() : JdbcQuery.getComponentsWithSearch(name);
+
+        if (components.size() > 0) {
+            for (Component component : components) {
+                if (component.getName().length() > 25) {
+                    component.setName(component.getName().substring(0, 25) + "...");
+                }
+                if (component.getDescription().length() > 40) {
+                    component.setDescription(component.getDescription().substring(0, 40) + "...");
+                }
+            }
+        }
+
         model.addAttribute("components", components);
         return "component/index";
     }
