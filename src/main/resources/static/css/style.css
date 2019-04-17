@@ -139,7 +139,7 @@ nav {
      top: 0;
      height: 100vh;
      z-index: 0;
-     transition: margin-left 1500ms ease;
+     transition: margin-left 2000ms ease;
  }
 
 button#menuToggle {
