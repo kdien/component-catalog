@@ -15,7 +15,8 @@ $(function () {
                 }))
             })
         },
-        select: function () {
+        select: function (event, ui) {
+            $(this).val(ui.item.value);
             $(this).parents("form").submit();
         }
     });
