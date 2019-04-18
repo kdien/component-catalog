@@ -44,15 +44,25 @@ public class LanguageServiceImpl implements LanguageService {
     @Override
     public void deleteLanguage(Language language) {
         List<Component> components = language.getComponents();
+
         for (Component component : components) {
             componentRepository.delete(component);
         }
+
+        language.setComponents(null);
 
         languageRepository.delete(language);
     }
 
     @Override
     public void deleteLanguage(int id) {
+        Language language = getLanguage(id);
+        List<Component> components = language.getComponents();
+
+        for (Component component : components) {
+            componentRepository.delete(component);
+        }
+
         languageRepository.deleteById(id);
     }
 

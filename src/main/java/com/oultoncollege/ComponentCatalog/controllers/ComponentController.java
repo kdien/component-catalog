@@ -104,8 +104,11 @@ public class ComponentController {
 
     @PostMapping("/delete/{id}")
     public String deleteComponentSubmit(@PathVariable("id") int id, Model model) {
-//        Component component = compService.getComponent(id);
-        compService.deleteComponent(id);
+        Component component = compService.getComponent(id);
+
+        if (component != null)
+            compService.deleteComponent(component);
+
         return "redirect:/component/";
     }
 }
