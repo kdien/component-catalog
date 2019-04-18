@@ -58,6 +58,7 @@ public class LanguageController {
     public String editLanguageSubmit(@PathVariable("id") int id, @Valid Language language, BindingResult result, Model model) {
         language.setLangId(id);
         language.setName(language.getName().trim());
+        language.setComponents(languageService.getLanguage(id).getComponents());
         languageService.editLanguage(language);
         return "redirect:/language/";
     }

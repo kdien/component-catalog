@@ -47,4 +47,8 @@ public class Language implements Serializable {
         components.sort(Comparator.comparing(Component::getName));
         return components;
     }
+
+    public void setComponents(List<Component> components) {
+        this.components = components;
+    }
 }
