@@ -1,4 +1,8 @@
 $(function () {
+    if ($(window).width() < 1366) {
+        toggleMenuIcon();
+    }
+
     $("#menuOpen, #menuClose").on("click", function () {
         toggleMenuIcon();
     });
